@@ -8,7 +8,7 @@ List all available Nox skills. For each one, provide:
 - A one-line description of what it does
 - When to use it
 
-## Nox Skills Catalog (32 skills)
+## Nox Skills Catalog (36 skills)
 
 ### Pipelines
 | Skill | Description |
@@ -24,6 +24,8 @@ List all available Nox skills. For each one, provide:
 | `/nox:simplify` | Find and fix duplication, over-engineering, unnecessary abstractions |
 | `/nox:refactor` | Targeted refactoring with behavior-preserving safety net |
 | `/nox:perf` | Performance profiling — bundle size, queries, rendering, memory |
+| `/nox:uxtest` | Comprehensive Playwright UX testing — visual audit, interactions, accessibility, performance |
+| `/nox:prompt` | Audit and optimize LLM prompts for reliability, cost, safety, and output quality |
 | `/nox:deps` | Dependency health audit — vulnerabilities, outdated, unused, licenses |
 
 ### Development Workflow
@@ -38,6 +40,7 @@ List all available Nox skills. For each one, provide:
 ### Architecture & Planning
 | Skill | Description |
 |-------|-------------|
+| `/nox:brainstorm` | Structured divergent thinking — explore 3+ approaches before converging on architecture |
 | `/nox:architect` | Design-first gate — no code until architecture is approved |
 | `/nox:questions` | Extract all clarifying questions before writing any code |
 | `/nox:landing` | Draft a conversion-focused landing page from scratch |
@@ -73,6 +76,7 @@ List all available Nox skills. For each one, provide:
 |-------|-------------|
 | `/nox:update` | Check for updates and install latest skills from GitHub |
 | `/nox:context` | Review and validate all AI context files (CLAUDE.md, MEMORY.md, etc.) |
+| `/nox:skill-create` | Create a new Nox skill in the correct format across all 3 CLIs |
 
 ---
 Nox

@@ -4,7 +4,7 @@
 
 # Nox
 
-32 battle-tested slash commands for **Claude Code**, **Gemini CLI**, and **Codex CLI**. One install, three CLIs, zero config.
+36 battle-tested slash commands for **Claude Code**, **Gemini CLI**, and **Codex CLI**. One install, three CLIs, zero config.
 
 Built for developers running multiple AI agents across terminals, machines, and models — Nox gives every agent the same playbook for code quality, security, deployment, and coordination.
 
@@ -97,7 +97,7 @@ bash install.sh --gemini-only
 bash install.sh --codex-only
 ```
 
-Type `/nox` in Claude Code and all 32 skills appear — same UX as `/gsd`.
+Type `/nox` in Claude Code and all 36 skills appear — same UX as `/gsd`.
 
 ## Manual Install
 
@@ -118,7 +118,7 @@ cp -r codex/skills/* ~/.agents/skills/
 
 ---
 
-## Skill Catalog (32 skills)
+## Skill Catalog (36 skills)
 
 ### Pipelines
 
@@ -147,6 +147,12 @@ cp -r codex/skills/* ~/.agents/skills/
 **`/nox:perf`** — Performance profiling
 > *"Why is the dashboard so slow?"* — Profiles frontend (bundle size, re-renders, Core Web Vitals) and backend (N+1 queries, missing indexes, memory leaks). Returns impact estimates with fixes.
 
+**`/nox:uxtest`** — Comprehensive UX testing
+> *"Test the entire frontend before we ship"* — Uses Playwright to run a full UX audit: screenshots at 4 breakpoints (375/768/1280/1920px), interaction testing on every button/form/modal, accessibility scan (Axe), performance snapshot (LCP, CLS, JS errors), and critical user flow simulation. Outputs a structured report with screenshots and pass/fail per flow.
+
+**`/nox:prompt`** — LLM prompt audit
+> *"Are our AI prompts production-ready?"* — Finds every LLM prompt in the codebase and audits it across 8 dimensions: clarity, output reliability, cost efficiency, safety/injection resistance, context management, model portability, testability, and maintainability. Calculates per-call and monthly cost estimates, suggests model downgrades where appropriate, and rewrites weak prompts.
+
 **`/nox:deps`** — Dependency health audit
 > *"Are any of our packages vulnerable or abandoned?"* — Runs vulnerability scans, finds unused/duplicate packages, checks licenses, flags unmaintained dependencies.
 
@@ -172,6 +178,9 @@ cp -r codex/skills/* ~/.agents/skills/
 ---
 
 ### Architecture & Planning
+
+**`/nox:brainstorm`** — Structured ideation
+> *"I need a notification system but I'm not sure how to approach it"* — Forces divergent thinking before convergence. Generates 3+ fundamentally different approaches with architecture sketches, tradeoff analysis, and a weighted evaluation matrix. Recommends one approach with a kill criterion and minimum viable slice. Hands off to `/nox:architect` when ready.
 
 **`/nox:architect`** — Design-first gate
 > *"I need a real-time notification system"* — Produces component diagram, data flow, API contracts, and tech decisions with tradeoffs. No code until you approve the architecture.
@@ -234,7 +243,10 @@ cp -r codex/skills/* ~/.agents/skills/
 > *"Why is this crashing?"* — Checks DEBUGGING.md first (another agent may have solved it). Traces root cause, maps failure chain, provides fix, proposes a DEBUGGING.md entry so it never gets re-investigated.
 
 **`/nox:help-forge`** — Skill catalog
-> *"What Nox commands are available?"* — Lists all 29 skills organized by category.
+> *"What Nox commands are available?"* — Lists all 36 skills organized by category.
+
+**`/nox:skill-create`** — Create new Nox skills
+> *"I want to add a new slash command to Nox"* — Meta-skill that scaffolds a new skill in the correct format across all 3 CLIs. Guides you through naming, content structure, registration in help-forge and README, validation checklist, and deployment to all machines. Prevents the most common mistakes (stale counts, missing formats, vague instructions).
 
 ---
 
@@ -279,14 +291,14 @@ NOX-AI-SKILLS/
 ├── install.sh                 # Auto-installer (Claude + Gemini + Codex)
 ├── claude/                    # Claude Code (/nox:<name>)
 │   └── nox/
-│       └── *.md               # 32 skill files
+│       └── *.md               # 36 skill files
 ├── gemini/                    # Gemini CLI
 │   ├── gemini-extension.json
 │   └── skills/
-│       └── <name>/SKILL.md    # 32 skill directories
+│       └── <name>/SKILL.md    # 36 skill directories
 └── codex/                     # Codex CLI
     └── skills/
-        └── <name>/SKILL.md    # 32 skill directories
+        └── <name>/SKILL.md    # 36 skill directories
 ```
 
 ## License
