@@ -1,19 +1,8 @@
+<div align="center">
+  <img src="assets/logo.svg" alt="NOX — skill pack for AI agents" width="540">
+</div>
+
 # Nox
-
-```
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
- ███╗   ██╗ ██████╗ ██╗  ██╗
- ████╗  ██║██╔═══██╗╚██╗██╔╝
- ██╔██╗ ██║██║   ██║ ╚███╔╝
- ██║╚██╗██║██║   ██║ ██╔██╗
- ██║ ╚████║╚██████╔╝██╔╝ ██╗
- ╚═╝  ╚═══╝ ╚═════╝ ╚═╝  ╚═╝
-
- skill pack for AI agents
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-```
 
 29 battle-tested slash commands for **Claude Code**, **Gemini CLI**, and **Codex CLI**. One install, three CLIs, zero config.
 

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 260" fill="none">
+  <rect width="540" height="260" rx="12" fill="#0d1117"/>
+
+  <!-- Row 1: color 141 #af87ff -->
+  <text x="270" y="60" text-anchor="middle" font-family="Menlo, Monaco, 'Courier New', monospace" font-size="26" font-weight="bold" fill="#af87ff">
+    ███╗   ██╗ ██████╗ ██╗  ██╗
+  </text>
+
+  <!-- Row 2: color 135 #af5fff -->
+  <text x="270" y="90" text-anchor="middle" font-family="Menlo, Monaco, 'Courier New', monospace" font-size="26" font-weight="bold" fill="#af5fff">
+    ████╗  ██║██╔═══██╗╚██╗██╔╝
+  </text>
+
+  <!-- Row 3: color 129 #af00ff -->
+  <text x="270" y="120" text-anchor="middle" font-family="Menlo, Monaco, 'Courier New', monospace" font-size="26" font-weight="bold" fill="#af00ff">
+    ██╔██╗ ██║██║   ██║ ╚███╔╝
+  </text>
+
+  <!-- Row 4: color 93 #8700ff -->
+  <text x="270" y="150" text-anchor="middle" font-family="Menlo, Monaco, 'Courier New', monospace" font-size="26" font-weight="bold" fill="#8700ff">
+    ██║╚██╗██║██║   ██║ ██╔██╗
+  </text>
+
+  <!-- Row 5: color 57 #5f00ff -->
+  <text x="270" y="180" text-anchor="middle" font-family="Menlo, Monaco, 'Courier New', monospace" font-size="26" font-weight="bold" fill="#5f00ff">
+    ██║ ╚████║╚██████╔╝██╔╝ ██╗
+  </text>
+
+  <!-- Row 6: color 54 #5f0087 -->
+  <text x="270" y="210" text-anchor="middle" font-family="Menlo, Monaco, 'Courier New', monospace" font-size="26" font-weight="bold" fill="#5f0087">
+    ╚═╝  ╚═══╝ ╚═════╝ ╚═╝  ╚═╝
+  </text>
+
+  <!-- Tagline -->
+  <text x="270" y="245" text-anchor="middle" font-family="Menlo, Monaco, 'Courier New', monospace" font-size="14" fill="#8b8b8b">
+    skill pack for AI agents
+  </text>
+</svg>
