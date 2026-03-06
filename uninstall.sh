@@ -92,7 +92,7 @@ fi
 if [ "$REMOVE_HOOKS" = true ]; then
   if [ -d "$HOOKS_DEST" ]; then
     hook_count=0
-    for hook in destructive-guard sync-guard secret-scanner debug-reminder build-tracker cost-alert notify-complete notify-timer-start; do
+    for hook in destructive-guard sync-guard secret-scanner debug-reminder build-tracker cost-alert notify-complete notify-timer-start branch-protect commit-lint test-regression-guard file-size-guard todo-tracker drift-detector auto-context compact-saver session-logger agent-tracker prompt-guard memory-auto-save; do
       if [ -f "$HOOKS_DEST/$hook.sh" ]; then
         rm -f "$HOOKS_DEST/$hook.sh"
         hook_count=$((hook_count + 1))
@@ -112,5 +112,24 @@ else
   echo "Hooks were NOT removed (use --hooks-too to include them)."
 fi
 
+# ── MCP Server ──────────────────────────────────────────────────
+MCP_JSON="$HOME/.claude/.mcp.json"
+if [ -f "$MCP_JSON" ] && grep -q '"nox"' "$MCP_JSON" 2>/dev/null; then
+  python3 -c "
+import json
+with open('$MCP_JSON', 'r') as f:
+    data = json.load(f)
+if 'mcpServers' in data and 'nox' in data['mcpServers']:
+    del data['mcpServers']['nox']
+    with open('$MCP_JSON', 'w') as f:
+        json.dump(data, f, indent=2)
+        f.write('\n')
+    print('Removed Nox MCP server from ' + '$MCP_JSON')
+" 2>/dev/null || echo "Could not update $MCP_JSON — remove 'nox' entry manually"
+fi
+
 echo ""
 echo "Nox uninstalled."
+echo ""
+echo "If you installed via curl (to ~/.nox), you can also remove the clone:"
+echo "  rm -rf ~/.nox"

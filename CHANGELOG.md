@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.5.0] - 2026-03-06
+
+### Added
+- **MCP server** — any MCP-compatible client (Claude Desktop, Cursor, etc.) can invoke Nox skills via 3 tools: `nox_list`, `nox_skill`, `nox_agent`
+- **One-liner curl install** — `curl -fsSL https://raw.githubusercontent.com/LDGUEST/NOX/main/install.sh | bash` clones to `~/.nox` and installs
+- MCP server auto-registers in `~/.claude/.mcp.json` during install
+- GitHub topics: `claude-code`, `gemini-cli`, `codex-cli`, `ai-skills`, `developer-tools`, `devops`, `security`
+
+### Changed
+- `install.sh` — bootstrap preamble for curl pipe detection + MCP server registration section
+- `uninstall.sh` — MCP cleanup (removes from `.mcp.json`) + updated hook list to all 19 hooks + `~/.nox` cleanup hint
+- Bumped `gemini-extension.json` version to 1.5.0
+
 ## [1.4.0] - 2026-03-06
 
 ### Added

@@ -5,6 +5,28 @@ set -eu
 
 # Nox Installer — Claude Code + Gemini CLI + Codex CLI
 # Usage: bash install.sh [--claude-only | --gemini-only | --codex-only | --symlink]
+# One-liner: curl -fsSL https://raw.githubusercontent.com/LDGUEST/NOX/main/install.sh | bash
+
+# ── Bootstrap: curl pipe detection ──────────────────────────────
+# When run via `curl ... | bash`, BASH_SOURCE is empty or /dev/stdin.
+# We clone the repo first, then re-execute from the clone.
+NOX_HOME="${NOX_HOME:-$HOME/.nox}"
+if [ -z "${BASH_SOURCE[0]:-}" ] || [ "${BASH_SOURCE[0]}" = "/dev/stdin" ] || [ "${BASH_SOURCE[0]}" = "bash" ]; then
+  echo "Nox — bootstrapping from curl..."
+  if ! command -v git &>/dev/null; then
+    echo "Error: git is required. Install git and try again."
+    exit 1
+  fi
+  if [ -d "$NOX_HOME/.git" ]; then
+    echo "  -> Updating existing clone at $NOX_HOME"
+    git -C "$NOX_HOME" pull --ff-only 2>/dev/null || git -C "$NOX_HOME" pull --rebase
+  else
+    echo "  -> Cloning to $NOX_HOME"
+    git clone https://github.com/LDGUEST/NOX.git "$NOX_HOME"
+  fi
+  exec bash "$NOX_HOME/install.sh" "$@"
+fi
+# ── End bootstrap ───────────────────────────────────────────────
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 CLAUDE_SRC="$SCRIPT_DIR/claude"
@@ -177,6 +199,62 @@ if [ "$INSTALL_HOOKS" = true ] && [ -d "$HOOKS_SRC" ]; then
     fi
   else
     echo "Hooks require Claude Code — skipping"
+  fi
+fi
+
+# ── MCP Server (any MCP-compatible client) ─────────────────────
+MCP_SRC="$SCRIPT_DIR/mcp-server"
+if [ -d "$MCP_SRC" ] && command -v node &>/dev/null; then
+  echo "Installing Nox MCP server..."
+
+  # Install npm dependencies if needed
+  if [ ! -d "$MCP_SRC/node_modules" ]; then
+    if command -v npm &>/dev/null; then
+      (cd "$MCP_SRC" && npm install --silent 2>/dev/null) || echo "  -> npm install failed — MCP server may not work"
+    else
+      echo "  -> npm not found — skipping MCP dependency install"
+    fi
+  fi
+
+  # Register in Claude Code's .mcp.json
+  MCP_JSON="$HOME/.claude/.mcp.json"
+  SERVER_PATH="$MCP_SRC/server.js"
+  NODE_PATH="$(command -v node)"
+
+  if [ -f "$MCP_JSON" ]; then
+    if grep -q '"nox"' "$MCP_JSON" 2>/dev/null; then
+      echo "  -> MCP server already registered in $MCP_JSON"
+    else
+      # Add nox server to existing .mcp.json using python3
+      python3 -c "
+import json, sys
+with open('$MCP_JSON', 'r') as f:
+    data = json.load(f)
+data.setdefault('mcpServers', {})['nox'] = {
+    'command': '$NODE_PATH',
+    'args': ['$SERVER_PATH']
+}
+with open('$MCP_JSON', 'w') as f:
+    json.dump(data, f, indent=2)
+    f.write('\n')
+" 2>/dev/null && echo "  -> Registered in $MCP_JSON" || echo "  -> Could not update $MCP_JSON — add manually"
+    fi
+  else
+    # Create new .mcp.json
+    mkdir -p "$(dirname "$MCP_JSON")"
+    python3 -c "
+import json
+data = {'mcpServers': {'nox': {'command': '$NODE_PATH', 'args': ['$SERVER_PATH']}}}
+with open('$MCP_JSON', 'w') as f:
+    json.dump(data, f, indent=2)
+    f.write('\n')
+" 2>/dev/null && echo "  -> Created $MCP_JSON with Nox MCP server" || echo "  -> Could not create $MCP_JSON — add manually"
+  fi
+else
+  if [ ! -d "$MCP_SRC" ]; then
+    echo "MCP server directory not found — skipping"
+  elif ! command -v node &>/dev/null; then
+    echo "Node.js not found — skipping MCP server (install: https://nodejs.org)"
   fi
 fi
 

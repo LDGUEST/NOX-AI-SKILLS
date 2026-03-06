@@ -1,0 +1,13 @@
+{
+  "name": "nox-mcp-server",
+  "version": "1.5.0",
+  "description": "MCP server for Nox skills — exposes 32 skills + 8 agents to any MCP-compatible client",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1"
+  }
+}

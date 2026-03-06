@@ -12,6 +12,9 @@ DEBUGGING.md
 .DS_Store
 Thumbs.db
 
+# Dependencies
+mcp-server/node_modules/
+
 # Editor
 *.swp
 *.swo

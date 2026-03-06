@@ -32,7 +32,7 @@
 
 # Nox
 
-32 skills + 8 agents for **Claude Code**, **Gemini CLI**, and **Codex CLI**. One install, three CLIs, zero config.
+32 skills + 8 agents + 19 hooks for **Claude Code**, **Gemini CLI**, and **Codex CLI**. One install, three CLIs, zero config.
 
 Built for developers running multiple AI agents across terminals, machines, and models — Nox gives every agent the same playbook for code quality, security, deployment, and coordination.
 
@@ -107,6 +107,12 @@ Plan → Execute → Visual Check → Review (advisory) → Review (complexity) 
 
 ## Quick Install
 
+**One-liner** (recommended):
+```bash
+curl -fsSL https://raw.githubusercontent.com/LDGUEST/NOX/main/install.sh | bash
+```
+
+**Or clone manually:**
 ```bash
 git clone https://github.com/LDGUEST/NOX.git
 cd NOX
@@ -483,6 +489,36 @@ Several skills use environment variables for configuration:
 | `FORGE_MACHINES` | diagnose | JSON array of machines to health-check |
 | `FORGE_SSH_HOSTS` | unloop | JSON array of SSH hosts for cross-machine ops |
 
+## MCP Server
+
+Nox includes an MCP server that exposes all skills to any MCP-compatible client (Claude Desktop, Cursor, Windsurf, etc.). The installer auto-registers it in `~/.claude/.mcp.json`.
+
+**3 tools:**
+| Tool | Description |
+|------|-------------|
+| `nox_list` | Returns the full skill catalog |
+| `nox_skill` | Returns a skill's instructions for the LLM to follow (accepts `skill_name`, optional `mode` and `target`) |
+| `nox_agent` | Returns an agent definition |
+
+Skills and agents are discovered dynamically from the filesystem — no hardcoded lists.
+
+**Manual setup** (if auto-registration didn't work):
+```json
+// ~/.claude/.mcp.json
+{
+  "mcpServers": {
+    "nox": {
+      "command": "node",
+      "args": ["/path/to/NOX/mcp-server/server.js"]
+    }
+  }
+}
+```
+
+Requires Node.js. Dependencies install automatically during `bash install.sh`.
+
+---
+
 ## Structure
 
 ```
@@ -511,15 +547,18 @@ NOX/
 │   ├── compact-saver.sh       # PreCompact: save context checkpoint
 │   ├── session-logger.sh      # Stop: log session summary
 │   └── memory-auto-save.sh    # Stop: remind to update DEBUGGING.md
+├── mcp-server/                # MCP server (any MCP-compatible client)
+│   ├── package.json
+│   └── server.js              # 3 tools: nox_list, nox_skill, nox_agent
 ├── agents/                    # Subagents for parallel quality gates
 │   └── nox-*.md               # 8 agent definitions
 ├── claude/                    # Claude Code (/nox:<name>)
 │   └── nox/
-│       └── *.md               # 31 skill files
+│       └── *.md               # 32 skill files
 ├── gemini/                    # Gemini CLI
 │   ├── gemini-extension.json
 │   └── skills/
-│       └── <name>/SKILL.md    # 31 skill directories
+│       └── <name>/SKILL.md    # 32 skill directories
 └── codex/                     # Codex CLI
     └── skills/
         └── <name>/SKILL.md    # 31 skill directories

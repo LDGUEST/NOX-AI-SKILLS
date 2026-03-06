@@ -81,5 +81,8 @@ List all available Nox skills. For each one, provide:
 | `nox-prompt-auditor` | LLM prompt audit across 8 dimensions with cost estimates (standalone) |
 | `nox-monitor` | Background log monitoring with anomaly detection (standalone) |
 
+### MCP Server
+All skills and agents are also available via MCP. Any MCP-compatible client can invoke `nox_list`, `nox_skill`, or `nox_agent`.
+
 ---
 Nox
