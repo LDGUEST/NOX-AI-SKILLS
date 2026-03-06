@@ -1,3 +1,8 @@
+---
+name: context
+description: Review and validate all AI context files across the project and global config
+---
+
 Review and validate all AI context files across the current project.
 
 Scan for CLAUDE.md, MEMORY.md, DEBUGGING.md, GEMINI.md at project root and global config (~/.claude/, ~/.gemini/).

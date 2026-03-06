@@ -4,10 +4,10 @@ Check for NOX AI Skills updates and install them from the CLI.
 
 1. **Find the NOX repo** — check these locations in order:
    - `$NOX_SKILLS_DIR` (if set)
-   - `$HOME/.nox-ai-skills`
-   - `$HOME/NOX-AI-SKILLS`
-   - On Windows: `C:\Users\Admin\.cursor\projects\NOX-AI-SKILLS`
-   - If not found, offer to clone: `git clone https://github.com/LDGUEST/NOX-AI-SKILLS.git $HOME/.nox-ai-skills`
+   - `$HOME/.nox`
+   - `$HOME/NOX`
+   - On Windows: `C:\Users\Admin\.cursor\projects\NOX`
+   - If not found, offer to clone: `git clone https://github.com/LDGUEST/NOX.git $HOME/.nox`
 
 2. **Check current version** — run from the repo directory:
    ```bash

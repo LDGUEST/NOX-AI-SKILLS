@@ -22,12 +22,38 @@ For each finding, assign a severity:
 - [ ] **Style** — Consistent with the project's existing patterns and conventions?
 - [ ] **Tests** — Are new code paths covered? Do existing tests still pass?
 
+## Complexity Check
+
+Also review for unnecessary complexity (formerly `/nox:simplify`):
+
+- [ ] **Duplication** — Similar code blocks that should be consolidated
+- [ ] **Unnecessary abstractions** — Wrappers, factories, or patterns that add indirection without value
+- [ ] **Dead code** — Functions, variables, imports, or exports that are never referenced
+- [ ] **Over-engineering** — Feature flags for one-time operations, premature optimization, configurability nobody asked for
+- [ ] **Verbose patterns** — Code that can be expressed more simply without losing clarity
+- [ ] **Unnecessary dependencies** — Libraries used for something achievable with built-in APIs
+
+**Complexity Rules:**
+- Three similar lines of code is better than a premature abstraction
+- Don't design for hypothetical future requirements
+- The right amount of complexity is the minimum needed for the current task
+- If a helper is only used once, inline it
+- If a comment explains what the code does (not why), the code should be clearer instead
+
 ## Output Format
 
 For each finding:
 ```
 [CRITICAL|WARNING|NIT] file.ts:42 — Brief description
   → Suggested fix or approach
+```
+
+For complexity findings:
+```
+SIMPLIFY: file.ts:42-58
+  Current: [what it does now]
+  Proposed: [simpler alternative]
+  Savings: [lines removed, abstractions eliminated, dependencies dropped]
 ```
 
 End with an overall verdict: **Approve**, **Request Changes**, or **Comment**.

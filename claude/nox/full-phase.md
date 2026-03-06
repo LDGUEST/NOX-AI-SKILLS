@@ -86,7 +86,7 @@ Plan → Architect → Clarify → Execute → ┌─ Review ──┐ → Commi
 
 - **After Step 2** — "Approve this architecture?"
 - **After Step 3** — Only if ambiguity was found
-- **After Step 5** — If ANY agent returns BLOCK (review, security, pentest, deps, perf, or UX)
+- **After Step 5** — If ANY agent returns BLOCK (review, security, audit, perf, or UX)
 - **After Step 8** — If UAT verification fails (loops back to fix)
 
 ## Gate Summary (all run in parallel in Step 5)

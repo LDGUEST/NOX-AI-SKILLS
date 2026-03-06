@@ -30,10 +30,10 @@ Run `/nox:review` on changed files in **advisory mode** — log findings but don
 - This is a safety net, not a gate. Speed matters here.
 
 ### Step 5: Sanity Check
-Run `/nox:simplify` on changed files — catch obvious issues like duplication, dead code, and over-engineering. Don't block on warnings.
+Run `/nox:review` in complexity-check mode on changed files — catch obvious issues like duplication, dead code, and over-engineering. Don't block on warnings.
 
 ### Step 6: Deps Quick Check
-Run `/nox:deps` in quick mode — only check for **Critical CVEs** in dependencies.
+Run `/nox:audit` in quick mode — only check for **Critical CVEs** in dependencies.
 - Critical CVEs → warn loudly (you probably don't want to ship a known exploit even in a prototype)
 - Everything else → skip, this isn't the place for a full audit
 
@@ -46,8 +46,8 @@ If anything non-obvious was learned, run `/nox:handoff` to capture it.
 ## Pipeline Diagram
 
 ```
-Plan → Execute → Visual Check → Review (advisory) → Simplify → Deps (critical only) → Commit → Handoff
- GSD               Playwright     Nox                  Nox         Nox                    Nox       Nox
+Plan → Execute → Visual Check → Review (advisory) → Review (complexity) → Audit (critical CVE only) → Commit → Handoff
+ GSD               Playwright     Nox                  Nox                   Nox                       Nox       Nox
 ```
 
 ## When to Use This vs /nox:full-phase
@@ -55,7 +55,7 @@ Plan → Execute → Visual Check → Review (advisory) → Simplify → Deps (c
 | | `/nox:full-phase` | `/nox:quick-phase` |
 |---|---|---|
 | **Use for** | Production features, user-facing changes | Internal tools, prototypes, experiments |
-| **Quality gates** | TDD, review, security, pentest, deps, perf, UX, deploy | Advisory review, visual spot-check, simplify, critical CVE check |
+| **Quality gates** | TDD, review, security, audit, perf, UX, deploy | Advisory review, visual spot-check, complexity check, critical CVE check |
 | **Blocking** | 6 gates can block the pipeline | Nothing blocks — warnings only |
 | **Speed** | Thorough — 14 steps | Fast — 8 steps, no blockers |
 | **Deploy** | Full 5-step protocol | Manual or skip |

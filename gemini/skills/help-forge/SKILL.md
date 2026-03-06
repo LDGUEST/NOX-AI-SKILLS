@@ -1,6 +1,6 @@
 ---
 name: help-forge
-description: List all available Nox skills and agents organized by category
+description: List all available Nox skills with descriptions and usage guidance
 ---
 
 List all available Nox skills. For each one, provide:
@@ -8,7 +8,7 @@ List all available Nox skills. For each one, provide:
 - A one-line description of what it does
 - When to use it
 
-## Nox Skills Catalog (36 skills + 8 agents)
+## Nox Skills Catalog (31 skills + 8 agents + 19 hooks)
 
 ### Pipelines
 | Skill | Description |
@@ -19,20 +19,17 @@ List all available Nox skills. For each one, provide:
 ### Code Quality
 | Skill | Description |
 |-------|-------------|
-| `/nox:audit` | Deep technical audit — bugs, security, perf, dead code, accessibility |
-| `/nox:review` | PR-style code review with severity ratings and suggested fixes |
-| `/nox:simplify` | Find and fix duplication, over-engineering, unnecessary abstractions |
+| `/nox:audit` | Deep technical audit — bugs, security, perf, dead code, accessibility, dependency health |
+| `/nox:review` | PR-style code review with severity ratings, suggested fixes, and complexity check |
 | `/nox:refactor` | Targeted refactoring with behavior-preserving safety net |
 | `/nox:perf` | Performance profiling — bundle size, queries, rendering, memory |
 | `/nox:uxtest` | Comprehensive Playwright UX testing — visual audit, interactions, accessibility, performance |
 | `/nox:prompt` | Audit and optimize LLM prompts for reliability, cost, safety, and output quality |
-| `/nox:deps` | Dependency health audit — vulnerabilities, outdated, unused, licenses |
 
 ### Development Workflow
 | Skill | Description |
 |-------|-------------|
-| `/nox:tdd` | Red-green-refactor enforcement — test-first development |
-| `/nox:test` | Generate comprehensive tests for existing code |
+| `/nox:tdd` | Red-green-refactor enforcement — test-first development and test generation |
 | `/nox:commit` | Generate Conventional Commits message from staged changes |
 | `/nox:changelog` | Generate CHANGELOG.md from git history |
 | `/nox:iterate` | Autonomous sub-agent execution with verification loop |
@@ -49,17 +46,16 @@ List all available Nox skills. For each one, provide:
 | Skill | Description |
 |-------|-------------|
 | `/nox:cicd` | Generate CI/CD workflow with auto-detected framework support |
-| `/nox:deploy` | 5-step deploy protocol: preflight → backup → deploy → verify → report |
+| `/nox:deploy` | 5-step deploy protocol: preflight -> backup -> deploy -> verify -> report |
 | `/nox:push` | Push to production with platform auto-detection and retry logic |
-| `/nox:diagnose` | Cross-machine system health check and status report |
+| `/nox:diagnose` | Cross-machine system health check, status report, and error investigation |
 | `/nox:monitorlive` | Real-time log monitoring — watches live traffic, surfaces errors and anomalies during testing |
 | `/nox:migrate` | Database migration generator — auto-detects ORM and framework |
 
 ### Security
 | Skill | Description |
 |-------|-------------|
-| `/nox:security` | OWASP Top 10 focused security scan with remediation guidance |
-| `/nox:pentest` | Autonomous penetration test — white-box recon, 5-category exploitation, zero false positives |
+| `/nox:security` | OWASP Top 10 security scan with remediation guidance — includes scan and pentest modes |
 
 ### Multi-Agent & Session Management
 | Skill | Description |
@@ -68,7 +64,6 @@ List all available Nox skills. For each one, provide:
 | `/nox:handoff` | End-of-session knowledge capture and transfer protocol |
 | `/nox:unloop` | Unattended autonomous repair with zero-regression mandate |
 | `/nox:overwrite` | Context reset — purge stale assumptions, set new truth |
-| `/nox:error` | Root cause analysis with shared DEBUGGING.md integration |
 | `/nox:help-forge` | This catalog |
 
 ### Meta

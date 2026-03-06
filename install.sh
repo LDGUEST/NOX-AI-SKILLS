@@ -164,12 +164,13 @@ if [ "$INSTALL_HOOKS" = true ] && [ -d "$HOOKS_SRC" ]; then
       if ! grep -q "destructive-guard" "$SETTINGS" 2>/dev/null; then
         echo ""
         echo "  To activate hooks, add them to $SETTINGS under \"hooks\"."
-        echo "  See hooks/README.md for the recommended configuration."
-        echo ""
-        echo "  Quick setup — paste into your settings.json hooks section:"
-        echo "  https://github.com/LDGUEST/NOX-AI-SKILLS#hooks"
+        echo "  Quick setup — paste the config from:"
+        echo "  https://github.com/LDGUEST/NOX#hooks-19"
+      elif ! grep -q "auto-context" "$SETTINGS" 2>/dev/null; then
+        echo "  -> Hooks partially wired — new hooks (v1.3) need settings.json update."
+        echo "  See: https://github.com/LDGUEST/NOX#hooks-19"
       else
-        echo "  -> Hooks already wired in $SETTINGS"
+        echo "  -> All hooks wired in $SETTINGS"
       fi
     else
       echo "  NOTE: No settings.json found. Create one to activate hooks."

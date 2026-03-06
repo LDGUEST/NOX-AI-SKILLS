@@ -4,9 +4,35 @@
 
 </div>
 
+<table>
+<tr>
+<td width="33%" align="center">
+
+### Ship Faster
+
+`/nox:full-phase` runs a complete plan-to-deploy pipeline in one command. Architecture, TDD, security, deploy — done before your coffee gets cold.
+
+</td>
+<td width="33%" align="center">
+
+### Catch Everything
+
+6 agents fire in parallel: code review, OWASP security scan, dependency audit, performance profiling, UX testing, and pentest. Any agent can block the merge.
+
+</td>
+<td width="33%" align="center">
+
+### Sleep Through It
+
+`/nox:unloop` runs overnight with zero-regression enforcement, 5-min anti-hang timers, and max-pivot guards. Wake up to fixed code, not new bugs.
+
+</td>
+</tr>
+</table>
+
 # Nox
 
-36 skills + 8 agents for **Claude Code**, **Gemini CLI**, and **Codex CLI**. One install, three CLIs, zero config.
+31 skills + 8 agents for **Claude Code**, **Gemini CLI**, and **Codex CLI**. One install, three CLIs, zero config.
 
 Built for developers running multiple AI agents across terminals, machines, and models — Nox gives every agent the same playbook for code quality, security, deployment, and coordination.
 
@@ -35,7 +61,7 @@ But when paired with [**GSD (Get Shit Done)**](https://github.com/get-shit-done-
 | **Does** | Plans phases, tracks milestones, orchestrates execution | Reviews code, scans security, deploys safely | Automated pipeline from idea to production |
 | **Scope** | *What* to build | *How* to build it right | Both — end to end |
 
-**Without GSD:** Every Nox skill works independently. You run `/nox:audit`, `/nox:deploy`, `/nox:security` whenever you need them.
+**Without GSD:** Every Nox skill works independently. You run `/nox:audit`, `/nox:deploy`, `/nox:security` whenever you need them. Skills like `audit` now include dependency health, `security` includes pentest mode, and `review` includes complexity checking.
 
 **With GSD:** Two combo skills unlock that chain everything together automatically:
 
@@ -46,13 +72,13 @@ But when paired with [**GSD (Get Shit Done)**](https://github.com/get-shit-done-
 **`/nox:full-phase`** — Complete plan-to-ship pipeline
 > *"Build a Stripe subscription system with full quality gates"*
 
-Automates the entire development lifecycle in one command. After execution completes, **6 quality gate agents dispatch in parallel** — reviewing code, scanning security, pentesting live, auditing deps, profiling performance, and screenshotting UX simultaneously:
+Automates the entire development lifecycle in one command. After execution completes, **6 quality gate agents dispatch in parallel** — reviewing code, scanning security, auditing dependencies, profiling performance, and screenshotting UX simultaneously:
 
 ```
 Plan → Architect → Clarify → Execute → ┌─ Review ──┐ → Commit → Deploy → Verify → Handoff
  GSD      Nox        Nox     GSD+Nox    │  Security │     Nox      Nox      GSD       Nox
-                                        │  Pentest  │
-                                        │  Deps     │
+                                        │  Audit    │
+                                        │  Perf     │
                                         └─ UX ──────┘
                                          6 PARALLEL
                                           AGENTS
@@ -63,16 +89,16 @@ Any agent returning BLOCK stops the pipeline. Fix the issue, re-run only the fai
 **`/nox:quick-phase`** — Lightweight plan-to-commit
 > *"Add an admin debug panel — skip the ceremony"*
 
-Same structure, minimal overhead. Visual spot-check, advisory review (warns but doesn't block), simplify check, critical CVE scan. No TDD, no security scan, no pentest, no deploy protocol. For internal tools, prototypes, and experiments.
+Same structure, minimal overhead. Visual spot-check, advisory review (warns but doesn't block), complexity check, critical CVE scan. No TDD, no security scan, no pentest, no deploy protocol. For internal tools, prototypes, and experiments.
 
 ```
-Plan → Execute → Visual Check → Review (advisory) → Simplify → Deps (critical only) → Commit → Handoff
+Plan → Execute → Visual Check → Review (advisory) → Review (complexity) → Audit (critical CVE only) → Commit → Handoff
 ```
 
 | | `/nox:full-phase` | `/nox:quick-phase` |
 |---|---|---|
 | **Use for** | Production features | Prototypes, internal tools |
-| **Quality gates** | 6 parallel agents (review, security, pentest, deps, perf, UX) | Advisory review, visual spot-check, simplify, critical CVE check |
+| **Quality gates** | 6 parallel agents (review, security, audit, perf, UX) | Advisory review, visual spot-check, complexity check, critical CVE check |
 | **Blocking** | 6 agents can block the pipeline | Nothing blocks — warnings only |
 | **Speed** | 9 steps, gates run in parallel | Fast — 8 steps |
 | **Requires GSD** | Optional (falls back to manual) | Optional |
@@ -82,8 +108,8 @@ Plan → Execute → Visual Check → Review (advisory) → Simplify → Deps (c
 ## Quick Install
 
 ```bash
-git clone https://github.com/LDGUEST/NOX-AI-SKILLS.git
-cd NOX-AI-SKILLS
+git clone https://github.com/LDGUEST/NOX.git
+cd NOX
 bash install.sh              # Auto-detects installed CLIs
 bash install.sh --symlink    # Symlink mode — auto-updates on git pull
 ```
@@ -95,7 +121,7 @@ bash install.sh --gemini-only
 bash install.sh --codex-only
 ```
 
-Type `/nox` in Claude Code and all 36 skills appear — same UX as `/gsd`.
+Type `/nox` in Claude Code and all 31 skills appear — same UX as `/gsd`.
 
 ## Manual Install
 
@@ -116,7 +142,7 @@ cp -r codex/skills/* ~/.agents/skills/
 
 ---
 
-## Skill Catalog (36 skills)
+## Skill Catalog (31 skills)
 
 ### Pipelines
 
@@ -131,13 +157,10 @@ cp -r codex/skills/* ~/.agents/skills/
 ### Code Quality
 
 **`/nox:audit`** — Deep technical audit
-> *"Audit this repo before we ship v2"* — Scans for bugs, security holes, dead code, accessibility gaps, and perf bottlenecks. Returns a severity-rated report with file paths and line numbers.
+> *"Audit this repo before we ship v2"* — Scans for bugs, security holes, dead code, accessibility gaps, perf bottlenecks, and dependency health (vulnerabilities, outdated, unused, licenses). Returns a severity-rated report with file paths and line numbers.
 
 **`/nox:review`** — PR-style code review
-> *"Review the changes I made to the auth module"* — Acts as a senior reviewer. Categorizes findings as Critical/Warning/Nit with suggested fixes. Ends with Approve, Request Changes, or Comment.
-
-**`/nox:simplify`** — Kill complexity
-> *"Simplify src/utils/ — it's gotten bloated"* — Finds duplication, unnecessary abstractions, dead code, and over-engineering. Proposes concrete simplifications that preserve identical behavior.
+> *"Review the changes I made to the auth module"* — Acts as a senior reviewer. Categorizes findings as Critical/Warning/Nit with suggested fixes. Includes a complexity check that flags duplication, unnecessary abstractions, dead code, and over-engineering. Ends with Approve, Request Changes, or Comment.
 
 **`/nox:refactor`** — Safe refactoring
 > *"Refactor the payment module to use the new API client"* — Snapshots current tests, makes incremental changes, verifies after each step. If tests break, reverts automatically.
@@ -151,18 +174,12 @@ cp -r codex/skills/* ~/.agents/skills/
 **`/nox:prompt`** — LLM prompt audit
 > *"Are our AI prompts production-ready?"* — Finds every LLM prompt in the codebase and audits it across 8 dimensions: clarity, output reliability, cost efficiency, safety/injection resistance, context management, model portability, testability, and maintainability. Calculates per-call and monthly cost estimates, suggests model downgrades where appropriate, and rewrites weak prompts.
 
-**`/nox:deps`** — Dependency health audit
-> *"Are any of our packages vulnerable or abandoned?"* — Runs vulnerability scans, finds unused/duplicate packages, checks licenses, flags unmaintained dependencies.
-
 ---
 
 ### Development Workflow
 
 **`/nox:tdd`** — Test-driven development
-> *"Add a discount calculator using TDD"* — Enforces Red-Green-Refactor. Writes failing test first, verifies it fails, writes minimal code to pass, then refactors. No skipping steps.
-
-**`/nox:test`** — Generate tests
-> *"Write tests for the user service"* — Auto-detects framework (Jest, Vitest, Pytest, Go test), analyzes code, generates happy path + edge case + error path tests. Targets 80%+ coverage.
+> *"Add a discount calculator using TDD"* — Enforces Red-Green-Refactor. Writes failing test first, verifies it fails, writes minimal code to pass, then refactors. No skipping steps. Also includes a test generation mode for writing comprehensive tests for existing code.
 
 **`/nox:commit`** — Smart commit messages
 > *"Commit these changes"* — Reads `git diff`, analyzes staged changes, generates a Conventional Commits message focused on WHY not just what. Detects breaking changes.
@@ -202,8 +219,8 @@ cp -r codex/skills/* ~/.agents/skills/
 **`/nox:push`** — Push with safety net
 > *"Push these changes"* — Auto-detects platform, pushes to feature branch first, waits for preview deploy, verifies, then merges. Retries up to 3 times on failure.
 
-**`/nox:diagnose`** — System health check
-> *"Check if all services are running"* — SSHs into configured machines, checks connectivity, CPU/memory/disk, Docker containers, GPU status, API endpoints. Returns a clean status table.
+**`/nox:diagnose`** — System health check & error investigation
+> *"Check if all services are running"* / *"Why is this crashing?"* — SSHs into configured machines, checks connectivity, CPU/memory/disk, Docker containers, GPU status, API endpoints. Returns a clean status table. Also includes error investigation mode: traces root cause, maps failure chain, checks DEBUGGING.md for prior solutions, and proposes entries so bugs are never re-investigated.
 
 **`/nox:monitorlive`** — Real-time log monitoring
 > *"Watch the logs while I test this"* — Auto-detects your log source (Vercel, Docker, PM2, systemd, log files), tails in real-time, and surfaces errors, slow requests, auth anomalies, and traffic patterns. Deduplicates noise, correlates incidents, suggests fixes inline.
@@ -215,11 +232,8 @@ cp -r codex/skills/* ~/.agents/skills/
 
 ### Security
 
-**`/nox:security`** — OWASP Top 10 scan
-> *"Run a security scan before launch"* — Checks all 10 categories: broken access control, injection, XSS, CSRF, auth flaws, vulnerable dependencies, secret exposure, SSRF. Returns findings with severity and remediation steps.
-
-**`/nox:pentest`** — Autonomous penetration test
-> *"Pentest this app before we ship"* — 5-phase white-box assessment: code recon, attack surface mapping, vulnerability analysis across 5 categories (injection, XSS, auth, SSRF, authorization), live exploitation with proof-of-concept, and pentester-grade report. No Exploit, No Report — zero false positives.
+**`/nox:security`** — OWASP Top 10 scan + pentest
+> *"Run a security scan before launch"* / *"Pentest this app before we ship"* — Two modes: **scan mode** checks all 10 OWASP categories (broken access control, injection, XSS, CSRF, auth flaws, vulnerable dependencies, secret exposure, SSRF) with severity and remediation steps. **Pentest mode** runs a 5-phase white-box assessment: code recon, attack surface mapping, vulnerability analysis across 5 categories (injection, XSS, auth, SSRF, authorization), live exploitation with proof-of-concept, and pentester-grade report. No Exploit, No Report — zero false positives.
 
 ---
 
@@ -237,11 +251,8 @@ cp -r codex/skills/* ~/.agents/skills/
 **`/nox:overwrite`** — Context reset
 > *"Forget the old API spec — here's the new one"* — Purges stale assumptions and confirms exactly what it's discarding. Essential when switching between agents with conflicting context.
 
-**`/nox:error`** — Shared debugging
-> *"Why is this crashing?"* — Checks DEBUGGING.md first (another agent may have solved it). Traces root cause, maps failure chain, provides fix, proposes a DEBUGGING.md entry so it never gets re-investigated.
-
 **`/nox:help-forge`** — Skill catalog
-> *"What Nox commands are available?"* — Lists all 36 skills organized by category.
+> *"What Nox commands are available?"* — Lists all 31 skills organized by category.
 
 **`/nox:skill-create`** — Create new Nox skills
 > *"I want to add a new slash command to Nox"* — Meta-skill that scaffolds a new skill in the correct format across all 3 CLIs. Guides you through naming, content structure, registration in help-forge and README, validation checklist, and deployment to all machines. Prevents the most common mistakes (stale counts, missing formats, vague instructions).
@@ -259,8 +270,7 @@ Nox was built for running multiple AI agents across different terminals, machine
 | `/nox:unloop` | **Autonomous operation** — Unattended repair with zero-regression mandate |
 | `/nox:iterate` | **Sub-agent orchestration** — Decomposes objectives, self-corrects up to 10 cycles |
 | `/nox:overwrite` | **Context reset** — Purges stale assumptions when switching agents or models |
-| `/nox:diagnose` | **Cross-machine health** — SSH into any machine and report service status |
-| `/nox:error` | **Shared debugging** — Agents share a DEBUGGING.md so bugs are never re-investigated |
+| `/nox:diagnose` | **Cross-machine health + error investigation** — SSH into any machine and report service status; also traces root cause with shared DEBUGGING.md so bugs are never re-investigated |
 
 **The workflow:** Agent A runs `/nox:handoff` when done → Agent B runs `/nox:syncagents` to pull changes → picks up right where A left off.
 
@@ -287,19 +297,50 @@ In `/nox:full-phase`, 6 of these agents (all except prompt-auditor and monitor) 
 
 ---
 
-## Hooks (7)
+## Hooks (19)
 
 Opt-in Claude Code hooks that provide continuous passive protection across ALL Nox and GSD workflows. Install with `bash install.sh --with-hooks`.
+
+19 hooks across **8 hook events** — the most comprehensive hook suite available for Claude Code.
+
+### Safety & Protection
 
 | Hook | Event | What It Does |
 |------|-------|-------------|
 | `destructive-guard` | PreToolUse (Bash) | Blocks `rm -rf`, `git reset --hard`, force push, DROP TABLE |
 | `sync-guard` | PreToolUse (Edit\|Write) | Warns if unstaged changes exist (multi-agent collision prevention) |
 | `secret-scanner` | PostToolUse (Write\|Edit) | Scans for leaked API keys, JWTs, AWS/Stripe/GitHub tokens |
-| `debug-reminder` | PostToolUse (Bash) | On failure: "check DEBUGGING.md before re-investigating" |
+| `branch-protect` | PreToolUse (Bash) | Blocks direct commits/pushes to main/master — forces feature branches |
+| `file-size-guard` | PreToolUse (Write) | Blocks writing files over 500KB — catches base64 dumps, minified bundles |
+| `prompt-guard` | UserPromptSubmit | Warns on vague/destructive prompts ("delete everything", "rewrite all") |
+
+### Quality & Regression
+
+| Hook | Event | What It Does |
+|------|-------|-------------|
+| `commit-lint` | PreToolUse (Bash) | Validates commit messages follow Conventional Commits (`feat:`, `fix:`, etc.) |
+| `test-regression-guard` | PostToolUse (Bash) | Tracks test pass/fail counts, warns when failures increase |
 | `build-tracker` | PostToolUse (Bash) | Tracks build warning/error counts, alerts on increase |
+| `drift-detector` | PostToolUse (Write\|Edit) | Tracks cumulative lines changed, warns at 100/500 lines to encourage commits |
+| `todo-tracker` | PostToolUse (Write\|Edit) | Detects new TODO/FIXME/HACK comments, logs them for tracking |
+
+### Awareness & Context
+
+| Hook | Event | What It Does |
+|------|-------|-------------|
+| `auto-context` | SessionStart | Injects git branch, recent commits, TODO count, DEBUGGING.md highlights on every session start |
+| `debug-reminder` | PostToolUse (Bash) | On failure: "check DEBUGGING.md before re-investigating" |
+| `compact-saver` | PreCompact | Saves a context checkpoint before compaction — branch, diff, recent files |
+| `memory-auto-save` | Stop | Reminds if bugs were fixed but DEBUGGING.md/MEMORY.md weren't updated |
+
+### Monitoring & Alerts
+
+| Hook | Event | What It Does |
+|------|-------|-------------|
 | `cost-alert` | PostToolUse (all) | Warns when session cost exceeds threshold (every 20 tool calls) |
 | `notify-complete` | PostToolUse (Bash) | Desktop notification when commands take >60s (macOS/Linux) |
+| `agent-tracker` | SubagentStart | Tracks subagent spawns, alerts on runaway loops (>10 agents) |
+| `session-logger` | Stop | Logs session summaries — project, branch, files changed — for work history |
 
 **Two-Layer Defense:** Hooks (Layer 1) run passively on every tool call. Agents (Layer 2) run at pipeline checkpoints. Together they catch issues both as they happen and in aggregate.
 
@@ -319,7 +360,13 @@ Especially critical during autonomous execution (`/nox:iterate`, `/nox:unloop`) 
 | `NOX_NOTIFY_THRESHOLD` | `60` | Seconds before command completion notification |
 | `NOX_ALLOW_DESTRUCTIVE` | `0` | Set to `1` to disable destructive guard |
 | `NOX_SECRET_PATTERNS` | — | Path to file with custom secret regex patterns |
-| `NOX_SKIP_*` | — | Set any `NOX_SKIP_SYNC_GUARD`, `NOX_SKIP_SECRET_SCAN`, etc. to `1` to disable individually |
+| `NOX_PROTECTED_BRANCHES` | `main\|master\|production` | Branches that branch-protect blocks |
+| `NOX_COMMIT_TYPES` | `feat\|fix\|chore\|...` | Allowed Conventional Commit types |
+| `NOX_FILE_SIZE_LIMIT` | `512000` | Max file size in bytes (500KB) |
+| `NOX_DRIFT_WARN` | `100` | Lines changed before first drift warning |
+| `NOX_DRIFT_ALERT` | `500` | Lines changed before escalated drift alert |
+| `NOX_AGENT_LIMIT` | `10` | Max subagents before runaway loop warning |
+| `NOX_SKIP_*` | — | Set any `NOX_SKIP_<HOOK_NAME>=1` to disable individually |
 
 <details>
 <summary>Settings.json configuration (click to expand)</summary>
@@ -329,6 +376,20 @@ Add this to your `~/.claude/settings.json` under `"hooks"`:
 ```json
 {
   "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {"type": "command", "command": "bash ~/.claude/hooks/auto-context.sh"}
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {"type": "command", "command": "bash ~/.claude/hooks/prompt-guard.sh"}
+        ]
+      }
+    ],
     "PreToolUse": [
       {
         "matcher": "Edit|Write",
@@ -337,9 +398,17 @@ Add this to your `~/.claude/settings.json` under `"hooks"`:
         ]
       },
       {
+        "matcher": "Write",
+        "hooks": [
+          {"type": "command", "command": "bash ~/.claude/hooks/file-size-guard.sh"}
+        ]
+      },
+      {
         "matcher": "Bash",
         "hooks": [
           {"type": "command", "command": "bash ~/.claude/hooks/destructive-guard.sh"},
+          {"type": "command", "command": "bash ~/.claude/hooks/branch-protect.sh"},
+          {"type": "command", "command": "bash ~/.claude/hooks/commit-lint.sh"},
           {"type": "command", "command": "bash ~/.claude/hooks/notify-timer-start.sh"}
         ]
       }
@@ -353,7 +422,9 @@ Add this to your `~/.claude/settings.json` under `"hooks"`:
       {
         "matcher": "Write|Edit",
         "hooks": [
-          {"type": "command", "command": "bash ~/.claude/hooks/secret-scanner.sh"}
+          {"type": "command", "command": "bash ~/.claude/hooks/secret-scanner.sh"},
+          {"type": "command", "command": "bash ~/.claude/hooks/todo-tracker.sh"},
+          {"type": "command", "command": "bash ~/.claude/hooks/drift-detector.sh"}
         ]
       },
       {
@@ -361,7 +432,30 @@ Add this to your `~/.claude/settings.json` under `"hooks"`:
         "hooks": [
           {"type": "command", "command": "bash ~/.claude/hooks/debug-reminder.sh"},
           {"type": "command", "command": "bash ~/.claude/hooks/build-tracker.sh"},
+          {"type": "command", "command": "bash ~/.claude/hooks/test-regression-guard.sh"},
           {"type": "command", "command": "bash ~/.claude/hooks/notify-complete.sh"}
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "hooks": [
+          {"type": "command", "command": "bash ~/.claude/hooks/agent-tracker.sh"}
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "hooks": [
+          {"type": "command", "command": "bash ~/.claude/hooks/compact-saver.sh"}
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {"type": "command", "command": "bash ~/.claude/hooks/session-logger.sh"},
+          {"type": "command", "command": "bash ~/.claude/hooks/memory-auto-save.sh"}
         ]
       }
     ]
@@ -389,31 +483,43 @@ Several skills use environment variables for configuration:
 ## Structure
 
 ```
-NOX-AI-SKILLS/
+NOX/
 ├── README.md
 ├── LICENSE                    # MIT
 ├── install.sh                 # Auto-installer (Claude + Gemini + Codex + Agents + Hooks)
 ├── hooks/                     # Claude Code hooks (opt-in with --with-hooks)
-│   ├── destructive-guard.sh   # Blocks dangerous commands
-│   ├── sync-guard.sh          # Multi-agent collision warning
-│   ├── secret-scanner.sh      # Leaked secret detection
-│   ├── debug-reminder.sh      # DEBUGGING.md auto-check
-│   ├── build-tracker.sh       # Build health tracking
-│   ├── cost-alert.sh          # Session cost threshold
-│   ├── notify-complete.sh     # Desktop notification (>60s commands)
-│   └── notify-timer-start.sh  # Timer for notify-complete
+│   ├── auto-context.sh        # SessionStart: inject project state
+│   ├── prompt-guard.sh        # UserPromptSubmit: warn on vague/destructive prompts
+│   ├── destructive-guard.sh   # PreToolUse: block dangerous commands
+│   ├── branch-protect.sh      # PreToolUse: block commits to main/master
+│   ├── commit-lint.sh         # PreToolUse: enforce Conventional Commits
+│   ├── file-size-guard.sh     # PreToolUse: block oversized file writes
+│   ├── sync-guard.sh          # PreToolUse: multi-agent collision warning
+│   ├── secret-scanner.sh      # PostToolUse: leaked secret detection
+│   ├── todo-tracker.sh        # PostToolUse: track new TODOs
+│   ├── drift-detector.sh      # PostToolUse: warn on large uncommitted diffs
+│   ├── test-regression-guard.sh # PostToolUse: detect test regressions
+│   ├── build-tracker.sh       # PostToolUse: build health tracking
+│   ├── debug-reminder.sh      # PostToolUse: DEBUGGING.md auto-check
+│   ├── cost-alert.sh          # PostToolUse: session cost threshold
+│   ├── notify-complete.sh     # PostToolUse: desktop notification (>60s)
+│   ├── notify-timer-start.sh  # PreToolUse: timer for notify-complete
+│   ├── agent-tracker.sh       # SubagentStart: runaway loop detection
+│   ├── compact-saver.sh       # PreCompact: save context checkpoint
+│   ├── session-logger.sh      # Stop: log session summary
+│   └── memory-auto-save.sh    # Stop: remind to update DEBUGGING.md
 ├── agents/                    # Subagents for parallel quality gates
 │   └── nox-*.md               # 8 agent definitions
 ├── claude/                    # Claude Code (/nox:<name>)
 │   └── nox/
-│       └── *.md               # 36 skill files
+│       └── *.md               # 31 skill files
 ├── gemini/                    # Gemini CLI
 │   ├── gemini-extension.json
 │   └── skills/
-│       └── <name>/SKILL.md    # 36 skill directories
+│       └── <name>/SKILL.md    # 31 skill directories
 └── codex/                     # Codex CLI
     └── skills/
-        └── <name>/SKILL.md    # 36 skill directories
+        └── <name>/SKILL.md    # 31 skill directories
 ```
 
 ## License

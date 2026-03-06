@@ -11,14 +11,15 @@
 
 ---
 
-## v1.1 — Polish & Community (in progress)
+## v1.1 — Polish & Community (shipped)
 
-- [ ] **Uninstall script** — `bash uninstall.sh` to cleanly remove all skills
+- [x] **Uninstall script** — `bash uninstall.sh` to cleanly remove all skills
 - [x] **Update script** — `bash update.sh` or `/nox:update` from any CLI
 - [x] **Version check** — compares local commit hash against remote, shows new commits
-- [ ] **Skill validation** — `bash validate.sh` confirms all 3 CLI formats are in sync
-- [ ] **Contributing guide** — CONTRIBUTING.md with skill authoring standards
-- [ ] **Changelog** — CHANGELOG.md tracking releases
+- [x] **Skill validation** — `bash validate.sh` confirms all 3 CLI formats are in sync
+- [x] **Contributing guide** — CONTRIBUTING.md with skill authoring standards
+- [x] **Changelog** — CHANGELOG.md tracking releases
+- [x] **LICENSE** — MIT
 
 ---
 
