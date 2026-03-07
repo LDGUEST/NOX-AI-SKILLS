@@ -319,7 +319,6 @@ Opt-in Claude Code hooks that provide continuous passive protection across ALL N
 | `destructive-guard` | PreToolUse (Bash) | Blocks `rm -rf`, `git reset --hard`, force push, DROP TABLE |
 | `sync-guard` | PreToolUse (Edit\|Write) | Warns if unstaged changes exist (multi-agent collision prevention) |
 | `secret-scanner` | PostToolUse (Write\|Edit) | Scans for leaked API keys, JWTs, AWS/Stripe/GitHub tokens |
-| `branch-protect` | PreToolUse (Bash) | Blocks direct commits/pushes to main/master — forces feature branches |
 | `file-size-guard` | PreToolUse (Write) | Blocks writing files over 500KB — catches base64 dumps, minified bundles |
 | `prompt-guard` | UserPromptSubmit | Warns on vague/destructive prompts ("delete everything", "rewrite all") |
 
@@ -369,7 +368,6 @@ Especially critical during autonomous execution (`/nox:iterate`, `/nox:unloop`) 
 | `NOX_NOTIFY_THRESHOLD` | `60` | Seconds before command completion notification |
 | `NOX_ALLOW_DESTRUCTIVE` | `0` | Set to `1` to disable destructive guard |
 | `NOX_SECRET_PATTERNS` | — | Path to file with custom secret regex patterns |
-| `NOX_PROTECTED_BRANCHES` | `main\|master\|production` | Branches that branch-protect blocks |
 | `NOX_COMMIT_TYPES` | `feat\|fix\|chore\|...` | Allowed Conventional Commit types |
 | `NOX_FILE_SIZE_LIMIT` | `512000` | Max file size in bytes (500KB) |
 | `NOX_DRIFT_WARN` | `100` | Lines changed before first drift warning |
@@ -416,7 +414,6 @@ Add this to your `~/.claude/settings.json` under `"hooks"`:
         "matcher": "Bash",
         "hooks": [
           {"type": "command", "command": "bash ~/.claude/hooks/destructive-guard.sh"},
-          {"type": "command", "command": "bash ~/.claude/hooks/branch-protect.sh"},
           {"type": "command", "command": "bash ~/.claude/hooks/commit-lint.sh"},
           {"type": "command", "command": "bash ~/.claude/hooks/notify-timer-start.sh"}
         ]
@@ -530,7 +527,6 @@ NOX/
 │   ├── auto-context.sh        # SessionStart: inject project state
 │   ├── prompt-guard.sh        # UserPromptSubmit: warn on vague/destructive prompts
 │   ├── destructive-guard.sh   # PreToolUse: block dangerous commands
-│   ├── branch-protect.sh      # PreToolUse: block commits to main/master
 │   ├── commit-lint.sh         # PreToolUse: enforce Conventional Commits
 │   ├── file-size-guard.sh     # PreToolUse: block oversized file writes
 │   ├── sync-guard.sh          # PreToolUse: multi-agent collision warning

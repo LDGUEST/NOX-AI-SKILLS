@@ -29,7 +29,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Added
 - 12 new hooks expanding coverage from 2 to 8 hook events (19 total):
   - `auto-context` (SessionStart) — injects project state on every session start
-  - `branch-protect` (PreToolUse) — blocks commits/pushes to main/master
   - `commit-lint` (PreToolUse) — enforces Conventional Commits format
   - `test-regression-guard` (PostToolUse) — tracks test pass/fail, warns on regression
   - `file-size-guard` (PreToolUse) — blocks oversized file writes (>500KB)

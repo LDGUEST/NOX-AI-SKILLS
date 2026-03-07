@@ -5,12 +5,11 @@
 # Install: bash install.sh --with-hooks
 # Config: NOX_SKIP_TODO_TRACKER=1 to disable
 #         NOX_TODO_LOG=path to override log file (default: ~/.claude/.todo_tracker)
-set -eu
-
 [ "${NOX_SKIP_TODO_TRACKER:-0}" = "1" ] && exit 0
 
 INPUT=$(cat)
 TOOL=$(echo "$INPUT" | python3 -c "import sys,json; print(json.load(sys.stdin).get('tool_name',''))" 2>/dev/null || echo "")
+[ -z "$TOOL" ] && exit 0
 [ "$TOOL" != "Write" ] && [ "$TOOL" != "Edit" ] && exit 0
 
 FILE_PATH=$(echo "$INPUT" | python3 -c "import sys,json; print(json.load(sys.stdin).get('tool_input',{}).get('file_path',''))" 2>/dev/null || echo "")

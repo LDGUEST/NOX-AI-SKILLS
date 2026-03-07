@@ -92,7 +92,7 @@ fi
 if [ "$REMOVE_HOOKS" = true ]; then
   if [ -d "$HOOKS_DEST" ]; then
     hook_count=0
-    for hook in destructive-guard sync-guard secret-scanner debug-reminder build-tracker cost-alert notify-complete notify-timer-start branch-protect commit-lint test-regression-guard file-size-guard todo-tracker drift-detector auto-context compact-saver session-logger agent-tracker prompt-guard memory-auto-save; do
+    for hook in destructive-guard sync-guard secret-scanner debug-reminder build-tracker cost-alert notify-complete notify-timer-start commit-lint test-regression-guard file-size-guard todo-tracker drift-detector auto-context compact-saver session-logger agent-tracker prompt-guard memory-auto-save; do
       if [ -f "$HOOKS_DEST/$hook.sh" ]; then
         rm -f "$HOOKS_DEST/$hook.sh"
         hook_count=$((hook_count + 1))
