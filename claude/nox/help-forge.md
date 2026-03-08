@@ -3,7 +3,7 @@ List all available Nox skills. For each one, provide:
 - A one-line description of what it does
 - When to use it
 
-## Nox Skills Catalog (32 skills + 8 agents + 19 hooks)
+## Nox Skills Catalog (33 skills + 8 agents + 19 hooks)
 
 ### Pipelines
 | Skill | Description |
@@ -61,11 +61,16 @@ List all available Nox skills. For each one, provide:
 | `/nox:overwrite` | Context reset — purge stale assumptions, set new truth |
 | `/nox:help-forge` | This catalog |
 
+### Context Engineering
+| Skill | Description |
+|-------|-------------|
+| `/nox:armor` | Add protection headers and safe-modification instructions to files and subsystems |
+| `/nox:context-engineer` | Discover, audit, and govern all AI context files — health scoring, armor enforcement, cross-project sync |
+
 ### Meta
 | Skill | Description |
 |-------|-------------|
 | `/nox:update` | Check for updates and install latest skills from GitHub |
-| `/nox:context` | Review and validate all AI context files (CLAUDE.md, MEMORY.md, etc.) |
 | `/nox:skill-create` | Create a new Nox skill in the correct format across all 3 CLIs |
 | `/nox:guardrails` | Safety guardrails — inline checks that mirror Claude Code hooks for Gemini/Codex users |
 

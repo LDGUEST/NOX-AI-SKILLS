@@ -32,7 +32,7 @@
 
 # Nox
 
-32 skills + 8 agents + 19 hooks for **Claude Code**, **Gemini CLI**, and **Codex CLI**. One install, three CLIs, zero config.
+33 skills + 8 agents + 19 hooks for **Claude Code**, **Gemini CLI**, and **Codex CLI**. One install, three CLIs, zero config.
 
 Built for developers running multiple AI agents across terminals, machines, and models — Nox gives every agent the same playbook for code quality, security, deployment, and coordination.
 
@@ -127,7 +127,7 @@ bash install.sh --gemini-only
 bash install.sh --codex-only
 ```
 
-Type `/nox` in Claude Code and all 32 skills appear — same UX as `/gsd`.
+Type `/nox` in Claude Code and all 33 skills appear — same UX as `/gsd`.
 
 ## Manual Install
 
@@ -148,7 +148,7 @@ cp -r codex/skills/* ~/.agents/skills/
 
 ---
 
-## Skill Catalog (32 skills)
+## Skill Catalog (33 skills)
 
 ### Pipelines
 
@@ -258,13 +258,23 @@ cp -r codex/skills/* ~/.agents/skills/
 > *"Forget the old API spec — here's the new one"* — Purges stale assumptions and confirms exactly what it's discarding. Essential when switching between agents with conflicting context.
 
 **`/nox:help-forge`** — Skill catalog
-> *"What Nox commands are available?"* — Lists all 32 skills organized by category.
+> *"What Nox commands are available?"* — Lists all 33 skills organized by category.
 
 **`/nox:skill-create`** — Create new Nox skills
 > *"I want to add a new slash command to Nox"* — Meta-skill that scaffolds a new skill in the correct format across all 3 CLIs. Guides you through naming, content structure, registration in help-forge and README, validation checklist, and deployment to all machines. Prevents the most common mistakes (stale counts, missing formats, vague instructions).
 
 **`/nox:guardrails`** — Safety guardrails for all CLIs
 > Inline safety checks that mirror Claude Code's 19 hooks for Gemini and Codex users. Destructive command blocking, secret scanning, branch protection, commit linting, drift detection, test regression tracking, and more. Automatically referenced by pipeline and autonomous skills. Claude users get these via hooks; Gemini/Codex users get them via this skill.
+
+---
+
+### Context Engineering
+
+**`/nox:armor`** — File and subsystem protection
+> *"Lock down the payment module — agents keep breaking it"* — Adds PROTECTED MODULE headers to code files and NOX-ARMOR comments to context files (CLAUDE.md, MEMORY.md). Gathers context from git history and codebase, writes specific hard rules with real incident references, creates safe-modification protocols in the nearest CLAUDE.md. Works with any language.
+
+**`/nox:context-engineer`** — Context file governance
+> *"Audit all my context files across every project"* — Discovers every AI context file (CLAUDE.md, MEMORY.md, DEBUGGING.md, .cursorrules, AGENTS.md, and more) across one or all projects. Scores each project's context health (0-100) on completeness, freshness, accuracy, protection, consistency, and bloat. Enforces armor on unprotected files through interactive questionnaires. Detects cross-project drift, proposes fixes for stale entries, generates missing context files from actual codebase analysis. Replaces the old `/nox:context` skill.
 
 ---
 
@@ -550,11 +560,11 @@ NOX/
 │   └── nox-*.md               # 8 agent definitions
 ├── claude/                    # Claude Code (/nox:<name>)
 │   └── nox/
-│       └── *.md               # 32 skill files
+│       └── *.md               # 33 skill files
 ├── gemini/                    # Gemini CLI
 │   ├── gemini-extension.json
 │   └── skills/
-│       └── <name>/SKILL.md    # 32 skill directories
+│       └── <name>/SKILL.md    # 33 skill directories
 └── codex/                     # Codex CLI
     └── skills/
         └── <name>/SKILL.md    # 31 skill directories
