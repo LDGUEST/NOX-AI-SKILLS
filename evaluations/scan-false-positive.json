@@ -1,0 +1,11 @@
+{
+  "skills": ["scan"],
+  "query": "Scan this file for TODO comments",
+  "files": ["src/api/routes.ts"],
+  "expected_behavior": [
+    "Searches the specific file for TODO comments",
+    "Does NOT dispatch parallel agents for a full codebase health check",
+    "Does NOT invoke the multi-agent scan workflow — this is a simple grep task"
+  ],
+  "should_trigger": false
+}

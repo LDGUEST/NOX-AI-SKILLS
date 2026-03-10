@@ -1,0 +1,12 @@
+{
+  "skills": ["commit"],
+  "query": "I've staged my changes, can you write a commit message for me?",
+  "files": [],
+  "expected_behavior": [
+    "Runs git diff --staged to inspect staged changes",
+    "Generates a commit message following Conventional Commits format (type(scope): description)",
+    "Includes a body summarizing what changed and why if the diff is substantial",
+    "Does not commit automatically — presents the message for review"
+  ],
+  "should_trigger": true
+}

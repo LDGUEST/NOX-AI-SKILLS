@@ -1,6 +1,6 @@
 ---
 name: tdd
-description: Enforce Red-Green-Refactor TDD cycle — write failing test first, then implementation, then refactor. No skipping.
+description: Enforces the Red-Green-Refactor TDD cycle — failing test first, then implementation, then refactor. Use when implementing any feature or fixing any bug to ensure test coverage from the start.
 ---
 
 Enforce the Red-Green-Refactor cycle. No skipping steps. This skill also handles standalone test generation when invoked on existing code without a feature spec.

@@ -1,6 +1,6 @@
 ---
 name: unloop
-description: Autonomous repair state — resolve all current issues without stopping until the system is functional.
+description: Enters an autonomous repair state that resolves all current issues without stopping until the system is functional. Use for unattended overnight repair sessions or complex multi-issue debugging.
 disable-model-invocation: true
 metadata:
   author: nox

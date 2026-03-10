@@ -1,0 +1,12 @@
+{
+  "skills": ["tdd"],
+  "query": "Fix the bug where user emails aren't being validated correctly",
+  "files": [],
+  "expected_behavior": [
+    "Writes a failing test that reproduces the bug before touching the implementation",
+    "Confirms the test fails with the current code",
+    "Fixes the implementation to make the test pass",
+    "Verifies no other tests regress"
+  ],
+  "should_trigger": true
+}

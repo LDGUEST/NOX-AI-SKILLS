@@ -1,6 +1,6 @@
 ---
 name: questions
-description: Ask all clarifying questions before any implementation to remove ambiguity. Use before coding or architecture.
+description: Asks all clarifying questions before any implementation to remove ambiguity. Use when requirements are unclear before starting coding or architecture work.
 metadata:
   author: nox
   version: "1.6"

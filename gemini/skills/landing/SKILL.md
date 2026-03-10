@@ -1,6 +1,6 @@
 ---
 name: landing
-description: Draft a conversion-focused landing page from scratch — structure, copy, components, responsive layout
+description: Drafts a conversion-focused landing page with stack detection, content strategy, components, responsive layout, and SEO. Use when building or redesigning a marketing or product landing page.
 ---
 
 Draft a conversion-focused landing page from scratch. Handles the full process: structure, copy, components, and responsive layout. Adapts to whatever stack the project uses.

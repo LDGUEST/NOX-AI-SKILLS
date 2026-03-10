@@ -1,6 +1,6 @@
 ---
 name: armor
-description: Add NOX-ARMOR protection headers to files and subsystems. Use when locking down battle-tested code against casual AI modification.
+description: Adds NOX-ARMOR protection headers to files and subsystems. Use when locking down battle-tested code against accidental AI modification.
 metadata:
   author: nox
   version: "1.6"

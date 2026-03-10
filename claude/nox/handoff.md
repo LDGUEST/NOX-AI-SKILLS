@@ -1,6 +1,6 @@
 ---
 name: handoff
-description: End-of-session knowledge capture — preserve decisions, blockers, next steps, and context before closing.
+description: Captures end-of-session knowledge — decisions made, blockers encountered, next steps, and full context. Use before ending a session to preserve state for the next one.
 metadata:
   author: nox
   version: "1.6"

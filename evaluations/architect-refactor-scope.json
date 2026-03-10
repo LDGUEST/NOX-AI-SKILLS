@@ -1,0 +1,12 @@
+{
+  "skills": ["architect"],
+  "query": "We need to split our monolith into microservices. Where do we start?",
+  "files": [],
+  "expected_behavior": [
+    "Enters design-first mode before any code changes",
+    "Analyzes the existing codebase to identify domain boundaries",
+    "Presents decomposition strategies with trade-offs",
+    "Does not generate implementation code — produces an architecture plan first"
+  ],
+  "should_trigger": true
+}

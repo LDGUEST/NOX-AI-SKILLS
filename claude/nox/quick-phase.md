@@ -1,6 +1,6 @@
 ---
 name: quick-phase
-description: Lightweight plan-to-commit pipeline without full quality gates — for prototypes and internal tools.
+description: Runs a lightweight plan-to-commit pipeline without full quality gates. Use for prototypes, internal tools, or low-risk changes where speed outweighs exhaustive review.
 metadata:
   author: nox
   version: "1.6"

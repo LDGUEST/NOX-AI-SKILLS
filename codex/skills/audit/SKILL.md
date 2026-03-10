@@ -1,6 +1,6 @@
 ---
 name: audit
-description: Rigorous technical audit of the codebase — vulnerabilities, performance, bad practices. Read-only analysis, no code written.
+description: Performs a rigorous technical audit of the codebase — vulnerabilities, performance, bad practices. Read-only, no code written. Use when assessing code quality, preparing a release, or investigating technical debt.
 ---
 
 Conduct a rigorous technical audit of the current codebase. Do not build new features or write final code yet. Act as a strict Senior Reviewer and identify vulnerabilities, performance bottlenecks, logical flaws, and bad practices.

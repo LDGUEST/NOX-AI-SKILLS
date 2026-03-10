@@ -1,0 +1,12 @@
+{
+  "skills": ["diagnose"],
+  "query": "I'm getting 'TypeError: Cannot read properties of undefined (reading map)' in my React component",
+  "files": [],
+  "expected_behavior": [
+    "Identifies the root cause — likely accessing an array before it's loaded or the prop is undefined",
+    "Searches the codebase for the affected component",
+    "Proposes a specific fix with a code example",
+    "Does not guess randomly — systematically narrows down the source"
+  ],
+  "should_trigger": true
+}

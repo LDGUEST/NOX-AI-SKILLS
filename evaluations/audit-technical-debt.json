@@ -1,0 +1,12 @@
+{
+  "skills": ["audit"],
+  "query": "Audit the codebase — I want to know what's wrong before we scale",
+  "files": [],
+  "expected_behavior": [
+    "Performs read-only analysis across the entire codebase",
+    "Identifies security vulnerabilities, performance anti-patterns, and bad practices",
+    "Reports technical debt with severity and estimated impact",
+    "Does NOT write or modify any code — audit only"
+  ],
+  "should_trigger": true
+}

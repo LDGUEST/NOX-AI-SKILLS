@@ -1,0 +1,11 @@
+{
+  "skills": ["commit"],
+  "query": "What's the difference between git commit and git push?",
+  "files": [],
+  "expected_behavior": [
+    "Answers the conceptual question about git commit vs git push",
+    "Does NOT run git commands or generate a commit message",
+    "Does NOT invoke the commit skill workflow"
+  ],
+  "should_trigger": false
+}

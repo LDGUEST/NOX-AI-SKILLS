@@ -1,6 +1,6 @@
 ---
 name: unloop
-description: Unattended autonomous repair with zero-regression mandate
+description: Enters an autonomous repair state that resolves all current issues without stopping until the system is functional. Use for unattended overnight repair sessions or complex multi-issue debugging.
 ---
 
 You are entering an unattended autonomous repair state. Your singular goal is to resolve all current issues. When the user returns, the system must be functional.

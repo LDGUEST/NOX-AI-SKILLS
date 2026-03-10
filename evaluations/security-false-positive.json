@@ -1,0 +1,11 @@
+{
+  "skills": ["security"],
+  "query": "What is SQL injection and how does it work?",
+  "files": [],
+  "expected_behavior": [
+    "Explains SQL injection conceptually",
+    "Does NOT scan the codebase for SQL injection vulnerabilities",
+    "Does NOT invoke the security audit workflow — this is educational"
+  ],
+  "should_trigger": false
+}

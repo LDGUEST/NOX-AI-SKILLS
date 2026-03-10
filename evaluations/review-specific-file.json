@@ -1,0 +1,12 @@
+{
+  "skills": ["review"],
+  "query": "Review src/auth/middleware.ts for me — I want a senior engineer's take",
+  "files": ["src/auth/middleware.ts"],
+  "expected_behavior": [
+    "Reads the specified file",
+    "Performs a thorough code review focusing on correctness, security, and maintainability",
+    "Comments on specific line numbers or code sections",
+    "Notes security implications given this is auth middleware"
+  ],
+  "should_trigger": true
+}

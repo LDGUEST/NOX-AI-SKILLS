@@ -1,0 +1,11 @@
+{
+  "skills": ["refactor"],
+  "query": "Add pagination to the users list endpoint",
+  "files": [],
+  "expected_behavior": [
+    "Adds pagination as a new feature to the endpoint",
+    "Does NOT enter the refactor safety-net workflow — this is feature addition, not restructuring",
+    "Does NOT restrict itself to behavior-preserving changes only"
+  ],
+  "should_trigger": false
+}

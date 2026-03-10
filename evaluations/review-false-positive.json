@@ -1,0 +1,11 @@
+{
+  "skills": ["review"],
+  "query": "Review the architecture decision we made last week about using Redis for sessions",
+  "files": [],
+  "expected_behavior": [
+    "Discusses the architectural trade-offs of using Redis for sessions",
+    "Does NOT perform a code review (no code is referenced)",
+    "Does NOT invoke the PR review workflow — this is an architectural discussion"
+  ],
+  "should_trigger": false
+}

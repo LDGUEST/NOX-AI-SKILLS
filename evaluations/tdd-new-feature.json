@@ -1,0 +1,13 @@
+{
+  "skills": ["tdd"],
+  "query": "Implement a rate limiter for the API endpoints",
+  "files": [],
+  "expected_behavior": [
+    "Writes a failing test for the rate limiter before any implementation",
+    "Confirms the test fails (Red phase)",
+    "Implements the minimum code to make the test pass (Green phase)",
+    "Refactors for quality while keeping tests passing (Refactor phase)",
+    "Does NOT write implementation code before the test exists"
+  ],
+  "should_trigger": true
+}

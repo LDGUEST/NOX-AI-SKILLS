@@ -1,6 +1,6 @@
 ---
 name: refactor
-description: Targeted refactoring with behavior-preserving safety net
+description: Performs targeted refactoring with a safety net — improves code structure while guaranteeing identical external behavior. Use when cleaning up technical debt or preparing code for extension.
 ---
 
 Perform a targeted refactoring with a safety net. The goal: improve code structure while guaranteeing identical behavior.

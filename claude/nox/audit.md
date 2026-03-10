@@ -1,6 +1,6 @@
 ---
 name: audit
-description: Rigorous technical audit of the codebase — vulnerabilities, performance, bad practices. Read-only analysis, no code written.
+description: Performs a rigorous technical audit of the codebase — vulnerabilities, performance, bad practices. Read-only, no code written. Use when assessing code quality, preparing a release, or investigating technical debt.
 metadata:
   author: nox
   version: "1.6"

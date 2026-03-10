@@ -1,6 +1,6 @@
 ---
 name: help-forge
-description: List all available NOX skills with descriptions and usage examples.
+description: Lists all available NOX skills with descriptions and usage examples. Use when exploring available commands or looking for the right skill for a task.
 metadata:
   author: nox
   version: "1.6"

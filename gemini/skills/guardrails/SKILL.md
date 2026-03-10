@@ -1,6 +1,6 @@
 ---
 name: guardrails
-description: Nox safety guardrails — inline checks that mirror Claude Code hooks for CLIs without hook systems
+description: Enforces NOX guardrails and safety protocols across all CLI tools. Use when installing cross-CLI hooks and protection rules or auditing active safety measures.
 ---
 
 # Nox Guardrails

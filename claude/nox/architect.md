@@ -1,6 +1,6 @@
 ---
 name: architect
-description: Design-first gate — no code until architecture is reviewed and approved. Use before any feature touching 3+ files.
+description: Enforces a design-first gate — no code written until architecture is reviewed and approved. Use before any feature touching 3+ files or requiring structural decisions.
 metadata:
   author: nox
   version: "1.6"

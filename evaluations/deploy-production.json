@@ -1,0 +1,14 @@
+{
+  "skills": ["deploy"],
+  "query": "Deploy this to production",
+  "files": [],
+  "expected_behavior": [
+    "Runs pre-flight checks: git status, uncommitted changes, branch verification",
+    "Creates a rollback tag before deploying",
+    "Auto-detects the deployment platform from project config",
+    "Streams deployment logs and monitors for errors",
+    "Verifies production URL returns HTTP 200 after deploy",
+    "Does NOT force-push or skip safety checks"
+  ],
+  "should_trigger": true
+}

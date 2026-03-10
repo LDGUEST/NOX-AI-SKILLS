@@ -1,0 +1,11 @@
+{
+  "skills": ["commit"],
+  "query": "git commit time, what should I write?",
+  "files": [],
+  "expected_behavior": [
+    "Recognizes this as a request to generate a commit message",
+    "Runs git diff --staged to inspect staged changes",
+    "Generates a Conventional Commits formatted message"
+  ],
+  "should_trigger": true
+}

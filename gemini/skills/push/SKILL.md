@@ -1,6 +1,6 @@
 ---
 name: push
-description: Push to production with platform auto-detection and retry logic
+description: Pushes changes to a remote branch and monitors the deployment pipeline for failures. Use when deploying a feature branch or triggering a CI/CD run.
 ---
 
 Push the current changes and monitor the deployment. Follow this protocol:

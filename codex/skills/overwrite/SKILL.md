@@ -1,6 +1,6 @@
 ---
 name: overwrite
-description: Context reset — purge stale assumptions, set new truth
+description: Treats the latest user input as an absolute state update, purging conflicting prior context for a specific component. Use when previous architectural decisions must be completely replaced.
 ---
 
 Treat my latest input as an absolute state update. Overwrite and purge any conflicting previous context, rules, or architectural decisions we've discussed regarding this specific component.

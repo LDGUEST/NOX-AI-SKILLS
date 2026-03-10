@@ -1,6 +1,6 @@
 ---
 name: context-engineer
-description: Discover, audit, and govern all AI context files across projects — health scoring, armor enforcement, bloat detection
+description: Audits and governs all AI context files — health scoring, armor enforcement, bloat detection, cross-project drift. Use when syncing CLAUDE.md files, diagnosing context issues, or onboarding a project.
 ---
 
 Discover, audit, and govern all AI context files across your projects. Goes beyond simple validation — enforces armor, scores health, detects cross-project drift, and asks the right questions to fill gaps. Built for solo developers juggling dozens of projects.

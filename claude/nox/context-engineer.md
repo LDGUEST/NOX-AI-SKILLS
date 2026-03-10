@@ -1,6 +1,6 @@
 ---
 name: context-engineer
-description: Audit and govern all AI context files — health scoring, armor enforcement, bloat detection, cross-project drift. Never writes to global system files.
+description: Audits and governs all AI context files — health scoring, armor enforcement, bloat detection, cross-project drift. Use when syncing CLAUDE.md files, diagnosing context issues, or onboarding a project.
 metadata:
   author: nox
   version: "1.6"

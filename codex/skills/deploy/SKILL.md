@@ -1,6 +1,6 @@
 ---
 name: deploy
-description: Deploy the project with full safety checks — pre-deploy validation, deploy, post-deploy monitoring.
+description: Deploys the project with full safety checks — pre-deploy validation, deployment execution, and post-deploy monitoring. Use when shipping to production or a staging environment.
 ---
 
 Deploy the current project with full safety checks. Follow this exact 5-step protocol:

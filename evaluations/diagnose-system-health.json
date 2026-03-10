@@ -1,0 +1,12 @@
+{
+  "skills": ["diagnose"],
+  "query": "Something feels off with the app, can you do a health check?",
+  "files": [],
+  "expected_behavior": [
+    "Runs a broad system health check across the codebase",
+    "Checks for common issues: broken imports, missing env vars, failed tests, lint errors",
+    "Reports findings in a structured format with severity levels",
+    "Prioritizes issues by impact"
+  ],
+  "should_trigger": true
+}

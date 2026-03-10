@@ -1,0 +1,11 @@
+{
+  "skills": ["architect"],
+  "query": "Add a helper function to format dates in the utils file",
+  "files": ["src/utils.ts"],
+  "expected_behavior": [
+    "Adds the date formatting function directly — this is a small, self-contained change",
+    "Does NOT enter architecture review mode for a single utility function",
+    "Does NOT block implementation with design gates for trivial changes"
+  ],
+  "should_trigger": false
+}

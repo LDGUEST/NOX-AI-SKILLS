@@ -1,0 +1,11 @@
+{
+  "skills": ["tdd"],
+  "query": "What testing frameworks work best with Next.js?",
+  "files": [],
+  "expected_behavior": [
+    "Answers the question about Next.js testing frameworks (Vitest, Jest, Playwright)",
+    "Does NOT enter the Red-Green-Refactor execution loop",
+    "Does NOT write any tests — this is a conceptual question"
+  ],
+  "should_trigger": false
+}

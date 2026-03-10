@@ -1,0 +1,12 @@
+{
+  "skills": ["audit"],
+  "query": "We're going live next week. Can you audit everything?",
+  "files": [],
+  "expected_behavior": [
+    "Conducts a comprehensive pre-release audit",
+    "Checks dependencies for known vulnerabilities",
+    "Reviews performance bottlenecks, error handling, and edge cases",
+    "Produces a structured report with critical/high/medium/low findings"
+  ],
+  "should_trigger": true
+}

@@ -1,6 +1,6 @@
 ---
 name: landing
-description: Draft a conversion-focused landing page — stack detection, content strategy, components, responsive layout, SEO.
+description: Drafts a conversion-focused landing page with stack detection, content strategy, components, responsive layout, and SEO. Use when building or redesigning a marketing or product landing page.
 metadata:
   author: nox
   version: "1.6"

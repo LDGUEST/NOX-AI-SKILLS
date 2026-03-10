@@ -1,6 +1,6 @@
 ---
 name: diagnose
-description: Investigate and diagnose specific errors or broad system health issues across the codebase.
+description: Investigates and diagnoses specific errors or broad system health issues across the codebase. Use when debugging failures, tracing crashes, or investigating unexpected behavior.
 ---
 
 Investigate and diagnose issues across your system and codebase. This skill handles both specific error investigation and broad system health checks.

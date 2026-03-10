@@ -1,6 +1,6 @@
 ---
 name: iterate
-description: Autonomous sub-agent execution with verification loop and visual checks
+description: Deploys specialized sub-agents to execute tasks and recursively self-correct until the objective is fully complete. Use for complex, multi-step tasks requiring autonomous execution and verification.
 ---
 
 Deploy specialized sub-agents for all required steps. Execute, verify against the goal, and recursively self-correct until the objective is 100% complete.

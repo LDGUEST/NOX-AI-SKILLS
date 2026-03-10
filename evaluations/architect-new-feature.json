@@ -1,0 +1,13 @@
+{
+  "skills": ["architect"],
+  "query": "I need to add real-time notifications to the app. How should I build it?",
+  "files": [],
+  "expected_behavior": [
+    "Enters design-first mode — does NOT write any code",
+    "Asks clarifying questions about scale, existing stack, and requirements",
+    "Presents architectural options (WebSockets vs SSE vs polling) with trade-offs",
+    "Produces an architecture document or decision record before proceeding",
+    "Requires explicit approval of the approach before any implementation begins"
+  ],
+  "should_trigger": true
+}

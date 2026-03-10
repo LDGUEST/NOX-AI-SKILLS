@@ -1,0 +1,13 @@
+{
+  "skills": ["refactor"],
+  "query": "This auth service is a mess — refactor it",
+  "files": ["src/services/auth.ts"],
+  "expected_behavior": [
+    "Reads the current file to understand existing behavior",
+    "Runs existing tests first to establish a baseline",
+    "Refactors for clarity, reduces complexity, improves naming",
+    "Verifies tests still pass after refactoring",
+    "Does NOT change external behavior or add new features"
+  ],
+  "should_trigger": true
+}

@@ -1,6 +1,6 @@
 ---
 name: help-forge
-description: List all available Nox skills with descriptions and usage guidance
+description: Lists all available NOX skills with descriptions and usage examples. Use when exploring available commands or looking for the right skill for a task.
 ---
 
 List all available Nox skills. For each one, provide:

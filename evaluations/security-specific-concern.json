@@ -1,0 +1,12 @@
+{
+  "skills": ["security"],
+  "query": "Check if our auth flow has any JWT vulnerabilities",
+  "files": [],
+  "expected_behavior": [
+    "Searches for JWT handling code in the codebase",
+    "Checks for common JWT vulnerabilities: algorithm confusion, weak secrets, missing expiry, none algorithm",
+    "Reviews token storage and transmission security",
+    "Reports specific findings with line references"
+  ],
+  "should_trigger": true
+}

@@ -1,6 +1,6 @@
 ---
 name: monitorlive
-description: Launch a background agent to watch live application logs in real-time during active testing.
+description: Launches a background agent that watches live application logs in real-time. Use during active testing or debugging to surface errors and anomalies as they occur.
 metadata:
   author: nox
   version: "1.6"

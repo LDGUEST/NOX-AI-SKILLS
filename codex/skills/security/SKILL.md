@@ -1,6 +1,6 @@
 ---
 name: security
-description: Comprehensive security assessment — OWASP Top 10 static analysis with optional live penetration testing.
+description: Performs a comprehensive security assessment — OWASP Top 10 static analysis with optional live penetration testing. Use before releases or when auditing code for vulnerabilities.
 ---
 
 Perform a comprehensive security assessment of this codebase. This skill combines static analysis (OWASP Top 10 scan) with optional live penetration testing.

@@ -1,6 +1,6 @@
 ---
 name: commit
-description: Generate Conventional Commits message from staged changes
+description: Generates a conventional commit message by analyzing staged git changes. Use when creating a commit or writing a message that follows Conventional Commits format.
 ---
 
 Generate a commit message from the current staged changes. Follow Conventional Commits format.

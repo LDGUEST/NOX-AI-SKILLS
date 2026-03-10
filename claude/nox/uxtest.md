@@ -1,6 +1,6 @@
 ---
 name: uxtest
-description: Comprehensive UX testing via Playwright — user journeys, responsive design, accessibility, interaction bugs.
+description: Performs comprehensive UX testing via Playwright — user journeys, responsive design, accessibility, and interaction bugs. Use when verifying UI quality before a release or after major frontend changes.
 metadata:
   author: nox
   version: "1.6"

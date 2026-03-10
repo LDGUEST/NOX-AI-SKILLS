@@ -1,6 +1,6 @@
 ---
 name: questions
-description: Extract all clarifying questions before writing any code — remove ambiguity in one shot
+description: Asks all clarifying questions before any implementation to remove ambiguity. Use when requirements are unclear before starting coding or architecture work.
 ---
 
 Review the current context. Before generating any code or solutions, ask every necessary clarifying question to remove all ambiguity. The goal: build it correctly in one shot instead of iterating through misunderstandings.

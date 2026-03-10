@@ -1,6 +1,6 @@
 ---
 name: changelog
-description: Generate CHANGELOG.md from git history using Keep a Changelog format
+description: Generates CHANGELOG.md from git history following Keep a Changelog format. Use when releasing a new version or documenting recent changes.
 ---
 
 Generate a CHANGELOG.md from git history. Follow Keep a Changelog format.

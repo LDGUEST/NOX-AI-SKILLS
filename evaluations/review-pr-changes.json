@@ -1,0 +1,12 @@
+{
+  "skills": ["review"],
+  "query": "Can you review my changes before I open a PR?",
+  "files": [],
+  "expected_behavior": [
+    "Runs git diff to inspect current changes",
+    "Reviews for bugs, security issues, code quality, and adherence to project conventions",
+    "Provides structured feedback with severity levels",
+    "Identifies issues that would block shipping vs nice-to-haves"
+  ],
+  "should_trigger": true
+}

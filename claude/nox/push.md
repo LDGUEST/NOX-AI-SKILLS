@@ -1,6 +1,6 @@
 ---
 name: push
-description: Push changes and monitor the deployment pipeline for failures.
+description: Pushes changes to a remote branch and monitors the deployment pipeline for failures. Use when deploying a feature branch or triggering a CI/CD run.
 disable-model-invocation: true
 metadata:
   author: nox

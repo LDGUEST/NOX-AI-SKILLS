@@ -1,6 +1,6 @@
 ---
 name: security
-description: Comprehensive security assessment — OWASP Top 10 static analysis with optional live penetration testing.
+description: Performs a comprehensive security assessment — OWASP Top 10 static analysis with optional live penetration testing. Use before releases or when auditing code for vulnerabilities.
 metadata:
   author: nox
   version: "1.6"

@@ -1,6 +1,6 @@
 ---
 name: prompt
-description: Audit and optimize LLM prompts in the codebase for reliability, cost efficiency, safety, and output quality.
+description: Audits and optimizes LLM prompts in the codebase for reliability, cost efficiency, safety, and output quality. Use when reviewing AI-integrated code or hardening prompt engineering.
 ---
 
 Review, optimize, and harden LLM prompts found in the codebase. For any project that calls AI APIs (OpenAI, Anthropic, Google, local models), this skill audits every prompt for reliability, cost efficiency, safety, and output quality.

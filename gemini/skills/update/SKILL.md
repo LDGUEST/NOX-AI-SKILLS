@@ -1,6 +1,6 @@
 ---
 name: update
-description: Check for NOX AI Skills updates and install them from the CLI
+description: Checks for NOX AI Skills updates and installs them from the CLI. Use when the skill pack may be outdated or a new release has been announced.
 ---
 
 Check for NOX AI Skills updates and install them from the CLI.

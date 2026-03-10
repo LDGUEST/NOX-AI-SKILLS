@@ -1,0 +1,11 @@
+{
+  "skills": ["diagnose"],
+  "query": "How do I diagnose memory leaks in Node.js in general?",
+  "files": [],
+  "expected_behavior": [
+    "Answers the conceptual question about Node.js memory leak debugging techniques",
+    "Does NOT run diagnostics on the current codebase",
+    "Does NOT invoke the diagnose skill's systematic investigation workflow"
+  ],
+  "should_trigger": false
+}

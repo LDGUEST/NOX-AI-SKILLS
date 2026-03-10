@@ -1,6 +1,6 @@
 ---
 name: brainstorm
-description: Structured divergent thinking and solution exploration — ideate broadly before converging on architecture
+description: Facilitates structured ideation before any architecture or code is written. Use when starting a new feature, product, or system to explore the solution space before committing.
 ---
 
 Structured ideation and divergent thinking before any architecture or code. This skill forces you to explore the solution space broadly before converging on a single approach. It prevents the most expensive engineering mistake: building the wrong thing well.

@@ -1,0 +1,11 @@
+{
+  "skills": ["deploy"],
+  "query": "How do Vercel deployments work?",
+  "files": [],
+  "expected_behavior": [
+    "Explains how Vercel's deployment pipeline works conceptually",
+    "Does NOT run any deployment commands",
+    "Does NOT invoke the deploy skill's 5-step protocol"
+  ],
+  "should_trigger": false
+}

@@ -1,0 +1,13 @@
+{
+  "skills": ["security"],
+  "query": "We're shipping tomorrow — do a full security audit",
+  "files": [],
+  "expected_behavior": [
+    "Scans for OWASP Top 10 vulnerabilities in the codebase",
+    "Checks for exposed secrets, insecure headers, SQL injection, XSS vectors",
+    "Reports findings with severity (Critical/High/Medium/Low)",
+    "Provides specific remediation for each finding",
+    "Does not modify code — audit only unless issues are critical"
+  ],
+  "should_trigger": true
+}

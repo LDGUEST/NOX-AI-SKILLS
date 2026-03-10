@@ -1,6 +1,6 @@
 ---
 name: quick-phase
-description: Lightweight plan-to-commit pipeline with advisory review and visual spot-check — for prototypes and internal tools
+description: Runs a lightweight plan-to-commit pipeline without full quality gates. Use for prototypes, internal tools, or low-risk changes where speed outweighs exhaustive review.
 ---
 
 Execute a lightweight plan-to-commit pipeline without full quality gates. For internal tools, prototypes, or changes that don't need security scanning and pentesting.

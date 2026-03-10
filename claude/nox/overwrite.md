@@ -1,6 +1,6 @@
 ---
 name: overwrite
-description: Treat latest input as absolute state update — overwrite conflicting previous context for a specific component.
+description: Treats the latest user input as an absolute state update, purging conflicting prior context for a specific component. Use when previous architectural decisions must be completely replaced.
 disable-model-invocation: true
 metadata:
   author: nox

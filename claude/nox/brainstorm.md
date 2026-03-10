@@ -1,6 +1,6 @@
 ---
 name: brainstorm
-description: Structured ideation before architecture or code. Forces broad solution-space exploration before committing to an approach.
+description: Facilitates structured ideation before any architecture or code is written. Use when starting a new feature, product, or system to explore the solution space before committing.
 metadata:
   author: nox
   version: "1.6"

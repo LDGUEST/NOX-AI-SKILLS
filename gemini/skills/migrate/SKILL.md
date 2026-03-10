@@ -1,6 +1,6 @@
 ---
 name: migrate
-description: Generate database migrations — auto-detects ORM and framework
+description: Generates a database migration for a schema change, auto-detecting the ORM and migration framework. Use when adding columns, tables, indexes, or modifying the database schema.
 ---
 
 Generate a database migration for the requested schema change. Auto-detect the ORM and migration framework.

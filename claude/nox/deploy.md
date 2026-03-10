@@ -1,6 +1,6 @@
 ---
 name: deploy
-description: Deploy the project with full safety checks — pre-deploy validation, deploy, post-deploy monitoring.
+description: Deploys the project with full safety checks — pre-deploy validation, deployment execution, and post-deploy monitoring. Use when shipping to production or a staging environment.
 disable-model-invocation: true
 metadata:
   author: nox

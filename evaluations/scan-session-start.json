@@ -1,0 +1,12 @@
+{
+  "skills": ["scan"],
+  "query": "Give me a full health check of this codebase",
+  "files": [],
+  "expected_behavior": [
+    "Auto-detects the project type from package.json, Dockerfile, pyproject.toml, etc.",
+    "Dispatches multiple agents in parallel: reviewer, security scanner, dep-auditor, context-engineer",
+    "Produces a consolidated health dashboard with findings from all agents",
+    "Summarizes critical issues requiring immediate attention"
+  ],
+  "should_trigger": true
+}

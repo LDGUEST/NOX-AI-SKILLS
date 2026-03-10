@@ -1,6 +1,6 @@
 ---
 name: scan
-description: Auto-detect project type and dispatch relevant NOX agents in parallel — proactive codebase health check on session start
+description: Auto-detects project type and dispatches NOX agents in parallel for a full codebase health check. Use when running a comprehensive quality, security, and dependency audit in a single command.
 ---
 
 Auto-detect project type and dispatch relevant NOX agents in parallel. Proactive codebase health check that runs on session start — detects what you're working with and sends the right specialists to audit it without blocking your workflow.

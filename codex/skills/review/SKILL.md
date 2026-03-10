@@ -1,6 +1,6 @@
 ---
 name: review
-description: PR-style code review on current changes or specified files. Senior reviewer focused on shipping quality.
+description: Performs a PR-style code review on current changes or specified files, acting as a senior reviewer focused on shipping quality. Use before committing or opening a pull request.
 ---
 
 Perform a PR-style code review on the current changes or specified files. Act as a senior reviewer focused on shipping quality code.

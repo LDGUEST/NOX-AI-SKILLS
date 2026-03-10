@@ -1,6 +1,6 @@
 ---
 name: cicd
-description: Generate a production-ready CI/CD workflow for this codebase.
+description: Generates a production-ready CI/CD workflow tailored to the detected stack. Use when setting up automated builds, tests, or deployments for the first time or upgrading an existing pipeline.
 metadata:
   author: nox
   version: "1.6"

@@ -1,0 +1,11 @@
+{
+  "skills": ["audit"],
+  "query": "Add input validation to the signup form",
+  "files": [],
+  "expected_behavior": [
+    "Implements the requested input validation feature",
+    "Does NOT enter read-only audit mode — this is a feature request",
+    "Does NOT restrict itself to analysis only"
+  ],
+  "should_trigger": false
+}

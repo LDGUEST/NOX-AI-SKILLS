@@ -1,6 +1,6 @@
 ---
 name: syncagents
-description: Safe multi-agent repo sync — stash, pull, merge
+description: Re-reads all relevant files after another agent has modified the repository to avoid stale context conflicts. Use when another AI agent or process has been modifying the codebase in parallel.
 ---
 
 Another agent or process has likely modified this repository since our session started. Avoid worktree messes, detached heads, and overwriting another agent's work with stale context.

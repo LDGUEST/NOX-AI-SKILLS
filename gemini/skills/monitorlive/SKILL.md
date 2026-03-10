@@ -1,6 +1,6 @@
 ---
 name: monitorlive
-description: Real-time log monitoring agent — watches live traffic, surfaces errors, slow requests, and auth anomalies during testing
+description: Launches a background agent that watches live application logs in real-time. Use during active testing or debugging to surface errors and anomalies as they occur.
 ---
 
 Launch a background monitoring agent that watches live application logs in real-time. Use this during live testing to observe actual user behavior, catch errors as they happen, and surface issues without manually tailing logs.

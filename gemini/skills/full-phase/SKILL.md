@@ -1,6 +1,6 @@
 ---
 name: full-phase
-description: Complete plan-to-ship pipeline with 6 parallel quality gate agents — architecture, TDD, security, pentest, perf, UX, deploy
+description: Orchestrates a full plan-to-ship pipeline with quality gates at every step — architecture, implementation, tests, security, and deploy. Use for non-trivial features requiring end-to-end delivery.
 ---
 
 Execute a complete plan-to-ship pipeline with quality gates at every step. This skill orchestrates both GSD and Nox commands into a single automated workflow.

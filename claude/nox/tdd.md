@@ -1,6 +1,6 @@
 ---
 name: tdd
-description: Enforce Red-Green-Refactor TDD cycle — write failing test first, then implementation, then refactor. No skipping.
+description: Enforces the Red-Green-Refactor TDD cycle — failing test first, then implementation, then refactor. Use when implementing any feature or fixing any bug to ensure test coverage from the start.
 metadata:
   author: nox
   version: "1.6"
