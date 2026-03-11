@@ -141,9 +141,9 @@ cp -r claude/nox ~/.claude/commands/
 cp -r gemini/ ~/.gemini/extensions/nox/
 ```
 
-**Codex CLI** — copy skills to `~/.agents/skills/`:
+**Codex CLI** — copy skills to `~/.codex/skills/`:
 ```bash
-cp -r codex/skills/* ~/.agents/skills/
+cp -r codex/skills/* ~/.codex/skills/
 ```
 
 ---

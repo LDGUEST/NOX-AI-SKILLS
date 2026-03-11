@@ -134,7 +134,7 @@ After committing and pushing to GitHub:
 2. If install.sh doesn't detect the CLI, copy manually:
    - Claude: `cp claude/nox/<name>.md ~/.claude/commands/nox/`
    - Gemini: `cp -r gemini/skills/<name> ~/.gemini/extensions/nox/skills/`
-   - Codex: `cp -r codex/skills/<name> ~/.agents/skills/`
+   - Codex: `cp -r codex/skills/<name> ~/.codex/skills/`
 3. Verify the skill appears: type `/nox:` in the CLI and check autocomplete
 
 ## Naming Conventions

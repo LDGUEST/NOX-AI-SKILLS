@@ -7,7 +7,7 @@ set -eu
 
 CLAUDE_DEST="$HOME/.claude/commands/nox"
 GEMINI_DEST="$HOME/.gemini/extensions/nox"
-CODEX_DEST="$HOME/.agents/skills"
+CODEX_DEST="$HOME/.codex/skills"
 AGENTS_DEST="$HOME/.claude/agents"
 HOOKS_DEST="$HOME/.claude/hooks"
 

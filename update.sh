@@ -63,7 +63,8 @@ NEW_HASH=$(git rev-parse --short HEAD)
 
 # Detect install mode
 if [ -L "$HOME/.claude/commands/nox/update.md" ] 2>/dev/null || \
-   [ -L "$HOME/.gemini/extensions/nox/gemini-extension.json" ] 2>/dev/null; then
+   [ -L "$HOME/.gemini/extensions/nox/gemini-extension.json" ] 2>/dev/null || \
+   [ -L "$HOME/.codex/skills/commit/SKILL.md" ] 2>/dev/null; then
     echo "  Symlink mode — skills already updated via pull."
 else
     echo "  Reinstalling skills..."
