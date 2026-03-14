@@ -19,21 +19,22 @@
 # - For complex parsing (multi-field, nested), use python3
 #
 # Compatibility: Uses grep -oE (POSIX ERE) — works on macOS, Linux, Git Bash/MSYS
+# Safety: All functions return exit 0 even when no match (safe under set -e)
 
 json_str() {
     # Extract a string value from JSON by key name
     # $1 = JSON string, $2 = key name
-    echo "$1" | grep -oE "\"$2\" *: *\"[^\"]*\"" | head -1 | sed "s/\"$2\" *: *\"//;s/\"$//"
+    { echo "$1" | grep -oE "\"$2\" *: *\"[^\"]*\"" | head -1 | sed "s/\"$2\" *: *\"//;s/\"$//"; } 2>/dev/null || true
 }
 
 json_num() {
     # Extract a numeric value from JSON by key name
     # $1 = JSON string, $2 = key name
-    echo "$1" | grep -oE "\"$2\" *: *[0-9.]+" | head -1 | sed "s/\"$2\" *: *//"
+    { echo "$1" | grep -oE "\"$2\" *: *[0-9.]+" | head -1 | sed "s/\"$2\" *: *//"; } 2>/dev/null || true
 }
 
 json_bool() {
     # Extract a boolean value from JSON by key name
     # $1 = JSON string, $2 = key name
-    echo "$1" | grep -oE "\"$2\" *: *(true|false)" | head -1 | sed "s/\"$2\" *: *//"
+    { echo "$1" | grep -oE "\"$2\" *: *(true|false)" | head -1 | sed "s/\"$2\" *: *//"; } 2>/dev/null || true
 }
