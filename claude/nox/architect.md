@@ -1,6 +1,7 @@
 ---
 name: architect
 description: Enforces a design-first gate — no code written until architecture is reviewed and approved. Use before any feature touching 3+ files or requiring structural decisions.
+argument-hint: "[feature-description]"
 metadata:
   author: nox
   version: "1.6"

@@ -1,6 +1,7 @@
 ---
 name: refactor
 description: Performs targeted refactoring with a safety net — improves code structure while guaranteeing identical external behavior. Use when cleaning up technical debt or preparing code for extension.
+argument-hint: "[file-or-pattern]"
 metadata:
   author: nox
   version: "1.6"

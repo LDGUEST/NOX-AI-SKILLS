@@ -1,6 +1,7 @@
 ---
 name: perf
 description: Profiles the codebase for performance issues and proposes concrete optimizations with impact estimates. Use when diagnosing slow queries, bundle bloat, memory leaks, or rendering bottlenecks.
+argument-hint: "[area-or-file]"
 metadata:
   author: nox
   version: "1.6"

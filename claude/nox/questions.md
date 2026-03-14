@@ -1,6 +1,7 @@
 ---
 name: questions
 description: Asks all clarifying questions before any implementation to remove ambiguity. Use when requirements are unclear before starting coding or architecture work.
+argument-hint: "[topic]"
 metadata:
   author: nox
   version: "1.6"

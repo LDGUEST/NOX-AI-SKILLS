@@ -1,6 +1,7 @@
 ---
 name: update
 description: Checks for NOX AI Skills updates and installs them from the CLI. Use when the skill pack may be outdated or a new release has been announced.
+disable-model-invocation: true
 metadata:
   author: nox
   version: "1.6"

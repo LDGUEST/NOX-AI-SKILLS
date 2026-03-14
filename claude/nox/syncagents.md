@@ -1,6 +1,7 @@
 ---
 name: syncagents
 description: Re-reads all relevant files after another agent has modified the repository to avoid stale context conflicts. Use when another AI agent or process has been modifying the codebase in parallel.
+disable-model-invocation: true
 metadata:
   author: nox
   version: "1.6"

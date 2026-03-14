@@ -1,6 +1,7 @@
 ---
 name: tdd
 description: Enforces the Red-Green-Refactor TDD cycle — failing test first, then implementation, then refactor. Use when implementing any feature or fixing any bug to ensure test coverage from the start.
+argument-hint: "[feature-or-bug]"
 metadata:
   author: nox
   version: "1.6"

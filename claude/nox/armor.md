@@ -1,6 +1,7 @@
 ---
 name: armor
 description: Adds NOX-ARMOR protection headers to files and subsystems. Use when locking down battle-tested code against accidental AI modification.
+disable-model-invocation: true
 metadata:
   author: nox
   version: "1.6"

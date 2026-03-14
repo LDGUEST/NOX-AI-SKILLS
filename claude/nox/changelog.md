@@ -1,6 +1,8 @@
 ---
 name: changelog
 description: Generates CHANGELOG.md from git history following Keep a Changelog format. Use when releasing a new version or documenting recent changes.
+disable-model-invocation: true
+argument-hint: "[version]"
 metadata:
   author: nox
   version: "1.6"

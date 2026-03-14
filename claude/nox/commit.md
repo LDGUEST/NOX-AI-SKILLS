@@ -1,6 +1,8 @@
 ---
 name: commit
 description: Generates a conventional commit message by analyzing staged git changes. Use when creating a commit or writing a message that follows Conventional Commits format.
+disable-model-invocation: true
+argument-hint: "[extra-context]"
 metadata:
   author: nox
   version: "1.6"

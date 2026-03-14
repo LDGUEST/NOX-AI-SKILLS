@@ -1,6 +1,7 @@
 ---
 name: diagnose
 description: Investigates and diagnoses specific errors or broad system health issues across the codebase. Use when debugging failures, tracing crashes, or investigating unexpected behavior.
+argument-hint: "[error-description]"
 metadata:
   author: nox
   version: "1.6"

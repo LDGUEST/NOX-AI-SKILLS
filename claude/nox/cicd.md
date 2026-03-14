@@ -1,6 +1,7 @@
 ---
 name: cicd
 description: Generates a production-ready CI/CD workflow tailored to the detected stack. Use when setting up automated builds, tests, or deployments for the first time or upgrading an existing pipeline.
+disable-model-invocation: true
 metadata:
   author: nox
   version: "1.6"

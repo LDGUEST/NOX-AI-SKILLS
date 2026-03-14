@@ -1,6 +1,8 @@
 ---
 name: skill-create
 description: Creates a new NOX skill in the correct spec-compliant format across Claude Code, Gemini CLI, and Codex CLI. Use when adding a new slash command to the NOX skill pack.
+disable-model-invocation: true
+argument-hint: "[skill-name]"
 ---
 
 Create a new Nox skill in the correct format across all three CLIs (Claude Code, Gemini CLI, Codex CLI). This meta-skill ensures consistent structure, naming, and quality when expanding the Nox skill pack.

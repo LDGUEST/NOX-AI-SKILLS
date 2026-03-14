@@ -1,6 +1,8 @@
 ---
 name: landing
 description: Drafts a conversion-focused landing page with stack detection, content strategy, components, responsive layout, and SEO. Use when building or redesigning a marketing or product landing page.
+disable-model-invocation: true
+argument-hint: "[product-name]"
 metadata:
   author: nox
   version: "1.6"

@@ -1,6 +1,7 @@
 ---
 name: brainstorm
 description: Facilitates structured ideation before any architecture or code is written. Use when starting a new feature, product, or system to explore the solution space before committing.
+argument-hint: "[idea-or-topic]"
 metadata:
   author: nox
   version: "1.6"
