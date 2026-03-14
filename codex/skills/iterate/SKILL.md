@@ -5,7 +5,7 @@ description: Deploys specialized sub-agents to execute tasks and recursively sel
 
 Deploy specialized sub-agents for all required steps. Execute, verify against the goal, and recursively self-correct until the objective is 100% complete.
 
-**Guardrails Active:** All [Nox Guardrails](/nox:guardrails) are enforced — especially the agent limiter (max 10 sub-operations before progress check) and zero-regression test tracking. Run `/nox:guardrails` to review the full ruleset.
+**Guardrails Active:** All [Nox Guardrails](/nox:guardrails) are enforced — especially the agent limiter (max 10 sub-operations before progress check) and zero-regression test tracking.
 
 ## Execution Protocol
 
@@ -28,6 +28,7 @@ After each step, confirm:
 - **Max iterations**: Do not attempt more than 10 correction cycles on a single step. If stuck after 10 attempts, halt and report the blocker.
 - **Rollback on failure**: If a fix introduces more problems than it solves, revert to the last known good state.
 - **Progress logging**: Log each step's status (pass/fail/skip) for the final report.
+- **Hook safety net**: If Nox hooks are installed, `destructive-guard` prevents dangerous commands during autonomous execution, `debug-reminder` points to DEBUGGING.md on failures (saving rediagnosis), and `cost-alert` warns if the session gets expensive. These run passively on every tool call — no action needed from the agent.
 
 ## Completion
 

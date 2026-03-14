@@ -20,6 +20,25 @@ Generate a CHANGELOG.md from git history. Follow Keep a Changelog format.
 - **Fixed** — Bug fixes
 - **Security** — Vulnerability patches
 
+## Format
+
+```markdown
+# Changelog
+
+## [Unreleased]
+
+### Added
+- Feature description (#issue)
+
+### Fixed
+- Bug fix description (#issue)
+
+## [1.0.0] - 2026-03-04
+
+### Added
+- Initial release
+```
+
 ## Rules
 
 - Group by version/tag, newest first

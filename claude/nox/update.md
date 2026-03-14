@@ -39,10 +39,10 @@ Check for NOX AI Skills updates and install them from the CLI.
    Format as a clean list:
    ```
    NOX Update Available
-   
+
    Installed: <LOCAL_HASH> (<LOCAL_DATE>)
    Latest:    <REMOTE_HASH>
-   
+
    What's New (<COMMIT_COUNT> commits)
    ─────────────────────────────────
    <commit list>

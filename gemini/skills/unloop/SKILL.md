@@ -5,7 +5,7 @@ description: Enters an autonomous repair state that resolves all current issues 
 
 You are entering an unattended autonomous repair state. Your singular goal is to resolve all current issues. When the user returns, the system must be functional.
 
-**Guardrails Active:** All [Nox Guardrails](/nox:guardrails) are enforced — especially the agent limiter (max 10 sub-operations before progress check) and zero-regression test tracking. Run `/nox:guardrails` to review the full ruleset.
+**Guardrails Active:** All [Nox Guardrails](/nox:guardrails) are enforced — especially the agent limiter (max 10 sub-operations before progress check) and zero-regression test tracking.
 
 ## Core Directive: Zero Regression
 
@@ -35,6 +35,17 @@ Treat remote machines with the same zero-regression strictness as the local envi
 - **5-Minute Reassessment**: If you spend over 5 minutes on a single micro-issue without progress, halt that approach immediately.
 - **Pivot Mandate**: Log the failure, reassess, and try an alternative approach. Do not burn time on dead ends.
 - **Max Retries**: No more than 3 pivot attempts per issue. If still stuck, log it as a blocker and move on.
+
+## Hook Safety Net (critical for unattended operation)
+
+If Nox hooks are installed (`bash install.sh --with-hooks`), the following protections run passively on every tool call during your entire session:
+- **`destructive-guard`** — blocks `rm -rf`, `git reset --hard`, force push, DROP TABLE. This is your guardrail against catastrophic mistakes at 3am.
+- **`sync-guard`** — warns if another process modified files since your last read
+- **`secret-scanner`** — catches leaked API keys before they reach git
+- **`debug-reminder`** — points to DEBUGGING.md when commands fail, preventing rediagnosis of known issues
+- **`cost-alert`** — warns if session cost exceeds threshold (default $15). Critical for overnight sessions.
+
+These hooks require NO action from you — they fire automatically. If a hook blocks a command, respect it and find a safer alternative.
 
 ## Pre-Flight
 

@@ -46,7 +46,7 @@ List all available Nox skills. For each one, provide:
 | Skill | Description |
 |-------|-------------|
 | `/nox:cicd` | Generate CI/CD workflow with auto-detected framework support |
-| `/nox:deploy` | 5-step deploy protocol: preflight -> backup -> deploy -> verify -> report |
+| `/nox:deploy` | 5-step deploy protocol: preflight → backup → deploy → verify → report |
 | `/nox:push` | Push to production with platform auto-detection and retry logic |
 | `/nox:diagnose` | Cross-machine system health check, status report, and error investigation |
 | `/nox:monitorlive` | Real-time log monitoring — watches live traffic, surfaces errors and anomalies during testing |
@@ -79,9 +79,6 @@ List all available Nox skills. For each one, provide:
 | `/nox:skill-create` | Create a new Nox skill in the correct format across all 3 CLIs |
 | `/nox:guardrails` | Safety guardrails — inline checks that mirror Claude Code hooks for Gemini/Codex users |
 
-### MCP Server
-All skills and agents are also available via MCP. Any MCP-compatible client can invoke `nox_list`, `nox_skill`, or `nox_agent`.
-
 ### Agents (subagents dispatched by `/nox:full-phase`)
 | Agent | Role |
 |-------|------|
@@ -93,6 +90,9 @@ All skills and agents are also available via MCP. Any MCP-compatible client can 
 | `nox-ux-tester` | Playwright screenshots at 4 breakpoints, interaction testing, accessibility |
 | `nox-prompt-auditor` | LLM prompt audit across 8 dimensions with cost estimates (standalone) |
 | `nox-monitor` | Background log monitoring with anomaly detection (standalone) |
+
+### MCP Server
+All skills and agents are also available via MCP. Any MCP-compatible client can invoke `nox_list`, `nox_skill`, or `nox_agent`.
 
 ---
 Nox
