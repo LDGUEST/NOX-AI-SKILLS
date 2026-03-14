@@ -11,6 +11,7 @@
 # Config:  Set NOX_SKIP_SECRET_SCAN=1 to disable
 #          Set NOX_SECRET_PATTERNS to a file with custom patterns (one per line)
 
+[[ "${NOX_SKIP_ALL:-0}" == "1" ]] && exit 0
 [ "${NOX_SKIP_SECRET_SCAN:-0}" = "1" ] && exit 0
 
 INPUT=$(cat)

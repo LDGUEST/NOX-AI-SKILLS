@@ -7,6 +7,7 @@
 #         NOX_AGENT_LIMIT=10 (max agents before warning, default 10)
 set -eu
 
+[ "${NOX_SKIP_ALL:-0}" = "1" ] && exit 0
 [ "${NOX_SKIP_AGENT_TRACKER:-0}" = "1" ] && exit 0
 
 INPUT=$(cat)

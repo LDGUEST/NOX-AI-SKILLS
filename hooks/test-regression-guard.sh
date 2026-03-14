@@ -7,6 +7,7 @@
 #         NOX_TEST_STATS=path to override stats file (default: ~/.claude/.test_stats)
 set -eu
 
+[ "${NOX_SKIP_ALL:-0}" = "1" ] && exit 0
 [ "${NOX_SKIP_TEST_GUARD:-0}" = "1" ] && exit 0
 
 INPUT=$(cat)

@@ -6,6 +6,7 @@
 # Install: Add to PreToolUse hooks with matcher "Bash"
 # Config:  NOX_SKIP_NOTIFY=1 to disable (same var as notify-complete.sh)
 
+[[ "${NOX_SKIP_ALL:-0}" == "1" ]] && exit 0
 [[ "$NOX_SKIP_NOTIFY" == "1" ]] && exit 0
 
 # Drain stdin (required) and record timestamp — no JSON parsing needed

@@ -6,6 +6,7 @@
 # Config: NOX_SKIP_MEMORY_SAVE=1 to disable
 set -eu
 
+[ "${NOX_SKIP_ALL:-0}" = "1" ] && exit 0
 [ "${NOX_SKIP_MEMORY_SAVE:-0}" = "1" ] && exit 0
 
 INPUT=$(cat)

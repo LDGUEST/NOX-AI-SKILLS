@@ -5,6 +5,7 @@
 # Install: bash install.sh --with-hooks
 # Config: NOX_SKIP_TODO_TRACKER=1 to disable
 #         NOX_TODO_LOG=path to override log file (default: ~/.claude/.todo_tracker)
+[ "${NOX_SKIP_ALL:-0}" = "1" ] && exit 0
 [ "${NOX_SKIP_TODO_TRACKER:-0}" = "1" ] && exit 0
 
 INPUT=$(cat)

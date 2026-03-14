@@ -22,6 +22,8 @@ const fs = require('fs');
 const os = require('os');
 const path = require('path');
 
+if (process.env.NOX_SKIP_ALL === '1') process.exit(0);
+
 const WARNING_THRESHOLD = 35;  // remaining_percentage <= 35%
 const CRITICAL_THRESHOLD = 25; // remaining_percentage <= 25%
 const HANDOFF_THRESHOLD = 18;  // remaining_percentage <= 18% (~2% before 84% autocompact)

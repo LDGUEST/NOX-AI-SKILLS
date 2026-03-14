@@ -11,6 +11,7 @@
 #          NOX_COST_CHECK_INTERVAL — check every N tool calls (default: 20)
 #          NOX_SKIP_COST_ALERT=1 to disable
 
+[[ "${NOX_SKIP_ALL:-0}" == "1" ]] && exit 0
 [ "${NOX_SKIP_COST_ALERT:-0}" = "1" ] && exit 0
 
 INTERVAL="${NOX_COST_CHECK_INTERVAL:-20}"

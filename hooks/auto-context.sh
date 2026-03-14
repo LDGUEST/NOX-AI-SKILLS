@@ -6,6 +6,7 @@
 # Config: NOX_SKIP_AUTO_CONTEXT=1 to disable
 set -eu
 
+[ "${NOX_SKIP_ALL:-0}" = "1" ] && exit 0
 [ "${NOX_SKIP_AUTO_CONTEXT:-0}" = "1" ] && exit 0
 
 INPUT=$(cat)

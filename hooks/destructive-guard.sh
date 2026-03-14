@@ -6,6 +6,7 @@
 # Install: Add to PreToolUse hooks with matcher "Bash"
 # Config:  Set NOX_ALLOW_DESTRUCTIVE=1 to disable (not recommended)
 
+[[ "${NOX_SKIP_ALL:-0}" == "1" ]] && exit 0
 [[ "$NOX_ALLOW_DESTRUCTIVE" == "1" ]] && exit 0
 
 INPUT=$(cat)

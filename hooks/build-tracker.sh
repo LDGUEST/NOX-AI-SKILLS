@@ -7,6 +7,7 @@
 # Config:  Set NOX_SKIP_BUILD_TRACKER=1 to disable
 #          Stats stored in ~/.claude/.build_stats (auto-created)
 
+[[ "${NOX_SKIP_ALL:-0}" == "1" ]] && exit 0
 [ "${NOX_SKIP_BUILD_TRACKER:-0}" = "1" ] && exit 0
 
 INPUT=$(cat)

@@ -6,6 +6,7 @@
 # Install: Add to PreToolUse hooks with matcher "Edit|Write"
 # Config:  Set NOX_SKIP_SYNC_GUARD=1 to disable
 
+[[ "${NOX_SKIP_ALL:-0}" == "1" ]] && exit 0
 [[ "${NOX_SKIP_SYNC_GUARD:-}" == "1" ]] && exit 0
 
 # Debounce: only check every 5th Write/Edit to reduce git overhead

@@ -10,6 +10,7 @@
 # Config: NOX_SKIP_DRIFT_DETECTOR=1 to disable
 #         NOX_DRIFT_WARN=100 (first warning threshold, default 100 lines)
 #         NOX_DRIFT_ALERT=500 (escalated warning, default 500 lines)
+[ "${NOX_SKIP_ALL:-0}" = "1" ] && exit 0
 [ "${NOX_SKIP_DRIFT_DETECTOR:-0}" = "1" ] && exit 0
 
 INPUT=$(cat)

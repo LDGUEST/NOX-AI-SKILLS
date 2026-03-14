@@ -8,6 +8,7 @@
 # Config:  Set NOX_SKIP_DEBUG_REMINDER=1 to disable
 #          Works with any project that has a DEBUGGING.md in its root
 
+[[ "${NOX_SKIP_ALL:-0}" == "1" ]] && exit 0
 [[ "$NOX_SKIP_DEBUG_REMINDER" == "1" ]] && exit 0
 
 INPUT=$(cat)

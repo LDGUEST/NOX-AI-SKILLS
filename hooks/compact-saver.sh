@@ -7,6 +7,7 @@
 #         NOX_COMPACT_DIR=path to override checkpoint dir (default: .claude/checkpoints/)
 set -eu
 
+[ "${NOX_SKIP_ALL:-0}" = "1" ] && exit 0
 [ "${NOX_SKIP_COMPACT_SAVER:-0}" = "1" ] && exit 0
 
 INPUT=$(cat)

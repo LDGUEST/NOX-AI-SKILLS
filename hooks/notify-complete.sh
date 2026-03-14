@@ -11,6 +11,7 @@
 #          NOX_SKIP_NOTIFY=1 to disable
 # Platform: macOS (osascript), Linux (notify-send), Windows (no-op)
 
+[[ "${NOX_SKIP_ALL:-0}" == "1" ]] && exit 0
 [[ "$NOX_SKIP_NOTIFY" == "1" ]] && exit 0
 
 INPUT=$(cat)

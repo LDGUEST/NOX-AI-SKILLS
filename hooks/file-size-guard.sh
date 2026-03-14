@@ -7,6 +7,7 @@
 #         NOX_FILE_SIZE_LIMIT=512000 (bytes, default 500KB)
 set -eu
 
+[ "${NOX_SKIP_ALL:-0}" = "1" ] && exit 0
 [ "${NOX_SKIP_FILE_SIZE_GUARD:-0}" = "1" ] && exit 0
 
 INPUT=$(cat)

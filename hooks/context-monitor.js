@@ -22,6 +22,8 @@ const os = require('os');
 const path = require('path');
 const { execSync } = require('child_process');
 
+if (process.env.NOX_SKIP_ALL === '1') process.exit(0);
+
 const WARNING_THRESHOLD = 35;  // remaining_percentage <= 35% (~65% used)
 const HANDOFF_THRESHOLD = 17;  // remaining_percentage <= 17% (~83% used)
 const STALE_SECONDS = 60;

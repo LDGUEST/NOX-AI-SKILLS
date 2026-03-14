@@ -7,6 +7,7 @@
 #         NOX_COMMIT_TYPES="feat|fix|chore|docs|style|refactor|perf|test|build|ci|revert" to customize
 set -eu
 
+[ "${NOX_SKIP_ALL:-0}" = "1" ] && exit 0
 [ "${NOX_SKIP_COMMIT_LINT:-0}" = "1" ] && exit 0
 
 INPUT=$(cat)

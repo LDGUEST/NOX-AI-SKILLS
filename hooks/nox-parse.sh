@@ -6,6 +6,9 @@
 
 source "$(dirname "${BASH_SOURCE[0]}")/lib-json.sh"
 
+# When run directly (not sourced), respect NOX_SKIP_ALL
+[[ "${BASH_SOURCE[0]}" == "$0" ]] && [ "${NOX_SKIP_ALL:-0}" = "1" ] && exit 0
+
 nox_field() {
     # $1 = key, $2 = JSON string (note: reversed arg order from json_str)
     json_str "$2" "$1"
