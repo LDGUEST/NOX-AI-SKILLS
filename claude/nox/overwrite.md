@@ -5,7 +5,7 @@ disable-model-invocation: true
 argument-hint: "[component]"
 metadata:
   author: nox
-  version: "1.6"
+  version: "2.0"
 ---
 
 Treat my latest input as an absolute state update. Overwrite and purge any conflicting previous context, rules, or architectural decisions we've discussed regarding this specific component.

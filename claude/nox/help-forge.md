@@ -3,7 +3,7 @@ name: help-forge
 description: Lists all available NOX skills with descriptions and usage examples. Use when exploring available commands or looking for the right skill for a task.
 metadata:
   author: nox
-  version: "1.6"
+  version: "2.0"
 ---
 
 List all available Nox skills. For each one, provide:

@@ -4,7 +4,7 @@ description: Generates a production-ready CI/CD workflow tailored to the detecte
 disable-model-invocation: true
 metadata:
   author: nox
-  version: "1.6"
+  version: "2.0"
 ---
 
 Generate a production-ready CI/CD workflow for this codebase.

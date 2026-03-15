@@ -4,7 +4,7 @@ description: Re-reads all relevant files after another agent has modified the re
 disable-model-invocation: true
 metadata:
   author: nox
-  version: "1.6"
+  version: "2.0"
 ---
 
 Another agent or process has likely modified this repository since our session started. Avoid worktree messes, detached heads, and overwriting another agent's work with stale context.

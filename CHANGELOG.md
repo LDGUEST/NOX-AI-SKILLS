@@ -4,6 +4,43 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [2.0.0] - 2026-03-14
+
+### Added
+- **Skills v2 frontmatter** across all 35 Claude skills:
+  - `disable-model-invocation: true` on 17 skills with side effects (commit, deploy, push, iterate, etc.)
+  - `argument-hint` on 24 skills for autocomplete UX
+  - `user-invocable: false` on guardrails (background knowledge, not a command)
+- **Subagent isolation** (`context: fork`) on 12 heavy skills — scan, audit, security, review, perf, swot, uxtest, iterate, full-phase, prompt, context-engineer, monitorlive now run in isolated context windows
+- **Session cost tracker** — per-session token/cost metrics to SQLite DB for A/B comparison (hooks ON vs OFF). Includes duration, commits, efficiency metrics, per-machine breakdown
+- **`lib-json.sh`** — shared lightweight JSON extraction library using `grep -oE` (POSIX ERE). ~50x faster than python3 for single-field extraction (~2ms vs ~30-80ms)
+- **`NOX_SKIP_ALL` master toggle** — disable all hooks at once for A/B testing while keeping cost tracker running
+- **CI pipeline** (`.github/workflows/ci.yml`) — validate.sh, shellcheck, node --check
+- **Hook integration tests** (`tests/test-hooks.sh`) — 18 tests covering destructive-guard, commit-lint, secret-scanner, file-size-guard, context-monitor
+- **Install tests** (`tests/test-install.sh`) — 27 tests for all install modes
+- **Content parity validation** in validate.sh — strips frontmatter, md5sums body, compares across 3 CLI formats
+- **Log rotation** — session log capped at 500 entries, metrics DB capped at 1000 sessions
+- **Recovery playbook system** — zero-intervention context handoff across compactions
+- **Colored statusline** hooks with session cost display
+- **`/nox:swot`** — SWOT analysis skill added to Gemini and Codex (was Claude-only)
+- **Skills reference doc** (`.planning/claude-skills-reference.md`) — 1000+ line comprehensive reference covering Agent Skills spec, Claude extensions, best practices, evals
+
+### Changed
+- **Hook hot paths rewritten** — eliminated python3 from 15 hooks, replaced with `lib-json.sh` grep-based extraction
+- **`nox-parse.sh` consolidated** as thin wrapper around `lib-json.sh` (was duplicate implementation)
+- **Hash-based dedup** in secret-scanner — md5 caches prevent re-scanning unchanged files
+- **Counter-before-stdin pattern** in cost-alert — skips 19/20 calls without any JSON parsing
+- **Description optimization** — overwrite and full-phase descriptions rewritten with natural trigger keywords
+- **35/35 content parity** — all skill body content synced across Claude, Gemini, and Codex
+- Skill count: 34 → 35
+
+### Fixed
+- **Stop hook crash** (persistent "No stderr output") — two root causes:
+  1. `lib-json.sh` grep returning exit 1 under `set -e` — fixed with `{ ...; } 2>/dev/null || true`
+  2. `session-cost-tracker.sh` calling `sqlite3` on Windows where it doesn't exist (exit 127) — fixed with `command -v sqlite3` guard
+- **`grep -oP` incompatibility** on Git Bash/MSYS — all hooks now use `-oE` (POSIX ERE)
+- **CRLF line endings** from Windows agents breaking bash scripts
+
 ## [1.6.0] - 2026-03-09
 
 ### Added

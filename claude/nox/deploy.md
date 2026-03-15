@@ -4,7 +4,7 @@ description: Deploys the project with full safety checks — pre-deploy validati
 disable-model-invocation: true
 metadata:
   author: nox
-  version: "1.6"
+  version: "2.0"
 ---
 
 Deploy the current project with full safety checks. Follow this exact 5-step protocol:

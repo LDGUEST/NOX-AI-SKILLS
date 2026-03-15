@@ -4,6 +4,7 @@
 
 [![GitHub stars](https://img.shields.io/github/stars/LDGUEST/NOX?style=flat-square&color=yellow)](https://github.com/LDGUEST/NOX/stargazers)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](LICENSE)
+[![Version](https://img.shields.io/badge/version-2.0.0-blue?style=flat-square)](CHANGELOG.md)
 [![Skills](https://img.shields.io/badge/skills-35-blueviolet?style=flat-square)](#skill-catalog-35-skills)
 [![Agents](https://img.shields.io/badge/agents-8-orange?style=flat-square)](#agents-8)
 [![Hooks](https://img.shields.io/badge/hooks-23-green?style=flat-square)](#hooks-23)

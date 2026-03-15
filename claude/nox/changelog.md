@@ -5,7 +5,7 @@ disable-model-invocation: true
 argument-hint: "[version]"
 metadata:
   author: nox
-  version: "1.6"
+  version: "2.0"
 ---
 
 Generate a CHANGELOG.md from git history. Follow Keep a Changelog format.

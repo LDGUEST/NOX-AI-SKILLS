@@ -4,7 +4,7 @@ description: Enforces the Red-Green-Refactor TDD cycle — failing test first, t
 argument-hint: "[feature-or-bug]"
 metadata:
   author: nox
-  version: "1.6"
+  version: "2.0"
 ---
 
 Enforce the Red-Green-Refactor cycle. No skipping steps. This skill also handles standalone test generation when invoked on existing code without a feature spec.

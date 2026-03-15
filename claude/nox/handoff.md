@@ -5,7 +5,7 @@ disable-model-invocation: true
 argument-hint: "[summary]"
 metadata:
   author: nox
-  version: "1.6"
+  version: "2.0"
 ---
 
 This session is ending. Before we close, execute the full knowledge capture protocol:

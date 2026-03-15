@@ -5,7 +5,7 @@ disable-model-invocation: true
 argument-hint: "[product-name]"
 metadata:
   author: nox
-  version: "1.6"
+  version: "2.0"
 ---
 
 Draft a conversion-focused landing page from scratch. This skill handles the full process: structure, copy, components, and responsive layout. Adapts to whatever stack the project uses.

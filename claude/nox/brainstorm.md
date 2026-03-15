@@ -4,7 +4,7 @@ description: Facilitates structured ideation before any architecture or code is 
 argument-hint: "[idea-or-topic]"
 metadata:
   author: nox
-  version: "1.6"
+  version: "2.0"
 ---
 
 Structured ideation and divergent thinking before any architecture or code. This skill forces you to explore the solution space broadly before converging on a single approach. It prevents the most expensive engineering mistake: building the wrong thing well.

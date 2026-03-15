@@ -4,7 +4,7 @@ description: Runs a lightweight plan-to-commit pipeline without full quality gat
 disable-model-invocation: true
 metadata:
   author: nox
-  version: "1.6"
+  version: "2.0"
 ---
 
 Execute a lightweight plan-to-commit pipeline without full quality gates. For internal tools, prototypes, or changes that don't need security scanning and pentesting.

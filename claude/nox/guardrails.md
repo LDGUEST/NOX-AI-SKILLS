@@ -4,7 +4,7 @@ description: Enforces NOX guardrails and safety protocols across all CLI tools. 
 user-invocable: false
 metadata:
   author: nox
-  version: "1.6"
+  version: "2.0"
 ---
 
 

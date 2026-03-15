@@ -5,7 +5,7 @@ disable-model-invocation: true
 argument-hint: "[schema-change]"
 metadata:
   author: nox
-  version: "1.6"
+  version: "2.0"
 ---
 
 Generate a database migration for the requested schema change. Auto-detect the ORM and migration framework.

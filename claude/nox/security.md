@@ -6,7 +6,7 @@ context: fork
 agent: general-purpose
 metadata:
   author: nox
-  version: "1.6"
+  version: "2.0"
 ---
 
 Perform a comprehensive security assessment of this codebase. This skill combines static analysis (OWASP Top 10 scan) with optional live penetration testing.

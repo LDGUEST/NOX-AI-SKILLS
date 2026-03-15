@@ -6,7 +6,7 @@ context: fork
 agent: general-purpose
 metadata:
   author: nox
-  version: "1.6"
+  version: "2.0"
 ---
 
 Auto-detect your project type and dispatch relevant NOX agents in parallel. Instead of memorizing which skills to run, just scan — NOX figures out what matters and tells you what it found.

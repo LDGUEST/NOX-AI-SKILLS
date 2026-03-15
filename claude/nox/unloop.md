@@ -4,7 +4,7 @@ description: Enters an autonomous repair state that resolves all current issues 
 disable-model-invocation: true
 metadata:
   author: nox
-  version: "1.6"
+  version: "2.0"
 ---
 
 You are entering an unattended autonomous repair state. Your singular goal is to resolve all current issues. When the user returns, the system must be functional.

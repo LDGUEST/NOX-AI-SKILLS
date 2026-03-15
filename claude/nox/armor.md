@@ -4,7 +4,7 @@ description: Adds NOX-ARMOR protection headers to files and subsystems. Use when
 disable-model-invocation: true
 metadata:
   author: nox
-  version: "1.6"
+  version: "2.0"
 ---
 
 Add protection headers and safe-modification instructions to files and subsystems. Use when code is battle-tested and must not be casually modified by future agents or sessions.

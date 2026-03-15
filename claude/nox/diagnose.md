@@ -4,7 +4,7 @@ description: Investigates and diagnoses specific errors or broad system health i
 argument-hint: "[error-description]"
 metadata:
   author: nox
-  version: "1.6"
+  version: "2.0"
 ---
 
 Investigate and diagnose issues across your system and codebase. This skill handles both specific error investigation and broad system health checks.

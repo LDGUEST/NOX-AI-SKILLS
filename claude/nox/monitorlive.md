@@ -6,7 +6,7 @@ context: fork
 agent: general-purpose
 metadata:
   author: nox
-  version: "1.6"
+  version: "2.0"
 ---
 
 Launch a background monitoring agent that watches live application logs in real-time. Use this during live testing to observe actual user behavior, catch errors as they happen, and surface issues without manually tailing logs.

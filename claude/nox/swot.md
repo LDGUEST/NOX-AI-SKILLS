@@ -6,7 +6,7 @@ context: fork
 agent: general-purpose
 metadata:
   author: nox
-  version: "1.0"
+  version: "2.0"
 ---
 
 Perform a brutally honest SWOT analysis of this codebase. No sugarcoating, no corporate fluff. The user needs truth, not comfort.

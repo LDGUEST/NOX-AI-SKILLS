@@ -4,7 +4,7 @@ description: Asks all clarifying questions before any implementation to remove a
 argument-hint: "[topic]"
 metadata:
   author: nox
-  version: "1.6"
+  version: "2.0"
 ---
 
 Review the current context. Before generating any code or solutions, ask every necessary clarifying question to remove all ambiguity. The goal: build it correctly in one shot instead of iterating through misunderstandings.

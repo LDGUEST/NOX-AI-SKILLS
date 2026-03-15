@@ -4,7 +4,7 @@ description: Pushes changes to a remote branch and monitors the deployment pipel
 disable-model-invocation: true
 metadata:
   author: nox
-  version: "1.6"
+  version: "2.0"
 ---
 
 Push the current changes and monitor the deployment. Follow this protocol:

@@ -6,7 +6,7 @@ context: fork
 agent: general-purpose
 metadata:
   author: nox
-  version: "1.6"
+  version: "2.0"
 ---
 
 Perform comprehensive interactive UX testing using Playwright. This goes far beyond screenshot checks — it simulates real user journeys, tests responsive behavior, validates accessibility, and catches interaction bugs that static analysis and unit tests miss entirely.

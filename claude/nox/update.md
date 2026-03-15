@@ -4,7 +4,7 @@ description: Checks for NOX AI Skills updates and installs them from the CLI. Us
 disable-model-invocation: true
 metadata:
   author: nox
-  version: "1.6"
+  version: "2.0"
 ---
 
 Check for NOX AI Skills updates and install them from the CLI.

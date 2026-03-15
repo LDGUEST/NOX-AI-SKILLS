@@ -4,7 +4,7 @@ description: Enforces a design-first gate — no code written until architecture
 argument-hint: "[feature-description]"
 metadata:
   author: nox
-  version: "1.6"
+  version: "2.0"
 ---
 
 Design-first gate. No code, scaffolding, or implementation until the architecture is reviewed and approved. This skill prevents the most expensive rework: building a system whose structure doesn't fit the problem.

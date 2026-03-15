@@ -5,7 +5,7 @@ disable-model-invocation: true
 argument-hint: "[extra-context]"
 metadata:
   author: nox
-  version: "1.6"
+  version: "2.0"
 ---
 
 Generate a commit message from the current staged changes. Follow Conventional Commits format.

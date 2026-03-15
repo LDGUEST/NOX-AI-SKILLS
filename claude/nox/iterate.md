@@ -7,7 +7,7 @@ context: fork
 agent: general-purpose
 metadata:
   author: nox
-  version: "1.6"
+  version: "2.0"
 ---
 
 Deploy specialized sub-agents for all required steps. Execute, verify against the goal, and recursively self-correct until the objective is 100% complete.

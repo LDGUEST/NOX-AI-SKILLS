@@ -4,7 +4,7 @@ description: Performs targeted refactoring with a safety net — improves code s
 argument-hint: "[file-or-pattern]"
 metadata:
   author: nox
-  version: "1.6"
+  version: "2.0"
 ---
 
 Perform a targeted refactoring with a safety net. The goal: improve code structure while guaranteeing identical behavior.

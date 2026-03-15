@@ -6,7 +6,7 @@ context: fork
 agent: general-purpose
 metadata:
   author: nox
-  version: "1.6"
+  version: "2.0"
 ---
 
 Perform a PR-style code review on the current changes or specified files. Act as a senior reviewer focused on shipping quality code.
